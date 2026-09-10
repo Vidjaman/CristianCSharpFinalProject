@@ -1,0 +1,573 @@
+fileFormatVersion: 2
+guid: ed0325edb48dbd645a59e5e58012e2f2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8956630972499767007
+    second: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_0
+  - first:
+      213: 7086696640668756020
+    second: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_1
+  - first:
+      213: -141085197981210624
+    second: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_2
+  - first:
+      213: -3608870883547539646
+    second: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_3
+  - first:
+      213: -5797162280724682251
+    second: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_4
+  - first:
+      213: 4405476343097760755
+    second: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_5
+  - first:
+      213: 415979156199884364
+    second: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_6
+  - first:
+      213: -5159236780590317104
+    second: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_7
+  - first:
+      213: -4480752321007499830
+    second: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_8
+  - first:
+      213: -7508979709149861124
+    second: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_9
+  - first:
+      213: -8482378751248449456
+    second: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_10
+  - first:
+      213: 899499232665669857
+    second: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_11
+  - first:
+      213: 2714068032595132573
+    second: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_12
+  - first:
+      213: 2833387892674141348
+    second: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_13
+  - first:
+      213: -156412546430965303
+    second: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_14
+  - first:
+      213: 4236663201545572119
+    second: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_15
+  - first:
+      213: -661498746998552603
+    second: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_16
+  - first:
+      213: 2622154439091137336
+    second: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_17
+  - first:
+      213: 6291161354674498495
+    second: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_18
+  - first:
+      213: 8305839402266254189
+    second: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_19
+  - first:
+      213: 1205703973587015342
+    second: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 71
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 121d3e3b597a3b380800000000000000
+      internalID: -8956630972499767007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_1
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 0
+        width: 71
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 438e30a3c01095260800000000000000
+      internalID: 7086696640668756020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_2
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 0
+        width: 71
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 008a34b82c3ca0ef0800000000000000
+      internalID: -141085197981210624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_3
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 0
+        width: 71
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24716e15d07baedc0800000000000000
+      internalID: -3608870883547539646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_4
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 0
+        width: 71
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f9ac10de975c8fa0800000000000000
+      internalID: -5797162280724682251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_5
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 0
+        width: 71
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fb9ab09465632d30800000000000000
+      internalID: 4405476343097760755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_6
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 0
+        width: 71
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c46c24fa6dad5c500800000000000000
+      internalID: 415979156199884364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_7
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 0
+        width: 71
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d1c8cc9b75b668b0800000000000000
+      internalID: -5159236780590317104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_8
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 0
+        width: 71
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac547db018b21d1c0800000000000000
+      internalID: -4480752321007499830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_9
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 0
+        width: 71
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfaa1822dbebac790800000000000000
+      internalID: -7508979709149861124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_10
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 0
+        width: 71
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 050c381a779884a80800000000000000
+      internalID: -8482378751248449456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_11
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 0
+        width: 71
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e016ce49c9ab7c00800000000000000
+      internalID: 899499232665669857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_12
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 0
+        width: 71
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d908313fe7e4aa520800000000000000
+      internalID: 2714068032595132573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_13
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 0
+        width: 71
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ac1cb5c647325720800000000000000
+      internalID: 2833387892674141348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_14
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 0
+        width: 71
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c961932e9f44ddf0800000000000000
+      internalID: -156412546430965303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_15
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 0
+        width: 71
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71fc7192cb6abca30800000000000000
+      internalID: 4236663201545572119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_16
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 0
+        width: 71
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e709c5f462e1d6f0800000000000000
+      internalID: -661498746998552603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 94d9265d600b5394bb06b62e39672814
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":17.0,"y":1.0},"gridSpriteSize":{"x":71.0,"y":100.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_0: -8956630972499767007
+      PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_1: 7086696640668756020
+      PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_10: -8482378751248449456
+      PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_11: 899499232665669857
+      PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_12: 2714068032595132573
+      PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_13: 2833387892674141348
+      PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_14: -156412546430965303
+      PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_15: 4236663201545572119
+      PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_16: -661498746998552603
+      PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_2: -141085197981210624
+      PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_3: -3608870883547539646
+      PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_4: -5797162280724682251
+      PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_5: 4405476343097760755
+      PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_6: 415979156199884364
+      PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_7: -5159236780590317104
+      PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_8: -4480752321007499830
+      PC_Computer-Deltarune-RealisticExplosion-RealisticExplosion-ezgif.com-gif-to-sprite-converter_9: -7508979709149861124
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
