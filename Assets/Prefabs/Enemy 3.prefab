@@ -130,12 +130,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7670728512655647140}
   - component: {fileID: 6705560371369529683}
+  - component: {fileID: 2800106093896297750}
   - component: {fileID: 7489215066978807043}
   - component: {fileID: 4047807954003897275}
   - component: {fileID: 6338004138694356069}
-  - component: {fileID: 2999507159133027096}
   m_Layer: 6
-  m_Name: Enemy 1
+  m_Name: Enemy 3
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,7 +150,7 @@ Transform:
   m_GameObject: {fileID: 9131268441554173708}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -9.85, y: 5.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -206,7 +206,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7865047310871859294, guid: c8053c2c0a120c74b841985e52e69736, type: 3}
+  m_Sprite: {fileID: -7010342202941483130, guid: cae7b7b5933381247a6e671167bc47e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -216,6 +216,21 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &2800106093896297750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9131268441554173708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef09dae08b59aa64aab98837d7624686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  Health: 60
+  speed: 24
+  expYield: 110
 --- !u!61 &7489215066978807043
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -254,7 +269,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.4, y: 1.9866667}
+    oldSize: {x: 9.6, y: 8.9}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -311,21 +326,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2999507159133027096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9131268441554173708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0c60cee1e073f743b2050d88f26d401, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  Health: 5
-  speed: 4
-  expYield: 30
-  distanceToKeep: 10
-  shotPrefab: {fileID: 8271981550017206518, guid: 9a6ad3208042aac42b1300c568f677ca, type: 3}
-  shotSpeed: 10

@@ -56,6 +56,10 @@ public class LevelUpButton : MonoBehaviour
         {
             text.text = "New Shield";
         }
+        if (upgradeToGive.type == UpgradeType.heal)
+        {
+            text.text = "Heal";
+        }
     }
     PlayerStats playerStats;
     public Upgrade upgradeToGive;
@@ -91,6 +95,9 @@ public class LevelUpButton : MonoBehaviour
                     m.coolDown *= 0.8f;
                 }
 
+                break;
+            case UpgradeType.heal:
+                playerStats.GetComponent<PlayerHealth>().HealthProp += 10;
                 break;
 
 

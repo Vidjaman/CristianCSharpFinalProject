@@ -7,8 +7,9 @@ public class RangedEnemy : Enemy
 {
     [SerializeField] float distanceToKeep;
     [SerializeField] GameObject shotPrefab;
-    
-    public override void SetTargetPosition()
+    [SerializeField] float shotSpeed;
+  
+    public override void SetTargetPosition()           
     {
         Vector3 vectorTowardsPlayer=(transform.position-Player.transform.position).normalized;
         targetPosition = Player.transform.position + (vectorTowardsPlayer * distanceToKeep);
@@ -27,7 +28,7 @@ public class RangedEnemy : Enemy
         yield return new WaitForSeconds(2);
         GameObject shot = Instantiate(shotPrefab,transform.position,Quaternion.identity);
         shot.GetComponent<Bullet>().direction = (Player.transform.position - transform.position).normalized;
-        shot.GetComponent<Bullet>().speed = 20;
+        shot.GetComponent<Bullet>().speed = shotSpeed;
         StartCoroutine(Shoot());
     }
 }

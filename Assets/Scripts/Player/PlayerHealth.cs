@@ -4,7 +4,20 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public float Health;
+    private float _Health;
+
+
+
+    public float HealthProp
+    {
+        get { return _Health; }
+        set { _Health = value; 
+        if(_Health>maxHealth ) 
+                _Health = maxHealth;
+            healthText.text = $"{Mathf.Round(_Health * 10) / 10}/{maxHealth}";
+        }
+    }
+
     [SerializeField] float maxHealth;
     [SerializeField] TextMeshProUGUI healthText;
     PlayerStats stats;
@@ -14,9 +27,9 @@ public class PlayerHealth : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Health = maxHealth;
+        HealthProp = maxHealth;
         stats = GetComponent<PlayerStats>();
-        healthText.text = $"{Health}/{maxHealth}";
+        healthText.text = $"{_Health}/{maxHealth}";
     }
 
     // Update is called once per frame
@@ -27,19 +40,24 @@ public class PlayerHealth : MonoBehaviour
     public void OnHit(float damage)
     {
         float realDamage= damage / (stats.Defence / 100);
-        if (InvincibilityTime > 0) return;
-        Health -= realDamage;
-        if (Health < 0) Health = 0;
+        if (InvincibilityTime > 0) 
+            return;
+        Camera.main.GetComponent<CameraTrackPlayer>().shakeTime = 0.2f;
+        HealthProp -= realDamage;
         InvincibilityTime = 0.3f;
-        healthText.text = $"{Mathf.Round(Health*100)/100}/{maxHealth}";
+       
         GetComponent<PlayerStats>().ResetCombo();
-        GameManager.Instance.SpawnText((Mathf.Round(realDamage * 100) / 100).ToString(), Color.yellow, transform.position);
-        if (Health <= 0) Die();
+        GameManager.Instance.SpawnText((Mathf.Round(realDamage * 10) / 10).ToString(), Color.yellow, transform.position);
+        if (_Health <= 0) Die();
+        
 
     }
     void Die()
     {
+        GameManager.Instance.SetHighScore(GetComponent<PlayerStats>().GetScore());
+        _Health = 0;
         Time.timeScale = 0;
         deathAnimator.Play("Death");
     }
+    
 }

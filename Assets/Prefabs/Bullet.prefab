@@ -111,8 +111,8 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 0}
   speed: 0
   particle: {fileID: 6918983237139514}
-  startColor: {r: 0, g: 0.1500001, b: 1, a: 1}
-  endColor: {r: 0.5309359, g: 1, b: 0, a: 1}
+  startColor: {r: 1, g: 0.7216981, b: 0.994857, a: 1}
+  endColor: {r: 1, g: 0.99862754, b: 0, a: 1}
 --- !u!114 &9057917050699268163
 MonoBehaviour:
   m_ObjectHideFlags: 0

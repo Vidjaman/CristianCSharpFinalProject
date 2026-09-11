@@ -5,6 +5,7 @@ using TMPro;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [Serializable] public struct EnemySpawnConditions
 {
@@ -26,6 +27,16 @@ public class GameManager : MonoBehaviour
    
     [SerializeField] public LayerMask enemy;
     [SerializeField] float spawnRadius;
+
+    float _HighScore;
+    public float GetHighScore()
+    {
+        return _HighScore;
+    }
+    public void SetHighScore(float score)
+    {
+        if(score> _HighScore) _HighScore = score;
+    }
     IEnumerator SpawnEnemy()
     {
         yield return new WaitForSeconds(spawnDelay);
@@ -57,15 +68,25 @@ public class GameManager : MonoBehaviour
     }
     void Awake()
     {
-        if (Instance == null) Instance = this;
+       
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this);
+        }
         else Destroy(gameObject);
         
         
     }
-    private void Start()
+
+    public void StartGame() 
     {
+        if (SceneManager.GetActiveScene().name != "MainGame" ) 
+            return;
+        player = GameObject.FindWithTag("Player");
         StartCoroutine(SpawnEnemy());
     }
+    
 
     private void OnDrawGizmosSelected()
     {

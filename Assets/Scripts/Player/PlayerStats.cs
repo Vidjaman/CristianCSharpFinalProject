@@ -34,6 +34,10 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] float Score;
     int Combo;
     float comboTimer;
+    public float GetScore()
+    {
+        return Score;
+    }
     public void OnEnemyDeath(float expYield)
     {
        

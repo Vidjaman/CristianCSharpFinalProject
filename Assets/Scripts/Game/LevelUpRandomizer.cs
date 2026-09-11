@@ -14,6 +14,7 @@ public enum UpgradeType
     reduceCoolDownRanged,
 
     newShieldWeapon,
+    heal,
     weaponUpgrade,
    
     
@@ -74,7 +75,7 @@ public class LevelUpRandomizer : MonoBehaviour
             if (player.GetComponentInChildren<RangedWeapon>() == null) exclusions.Add(4);
             while (exclusions.Contains((int)t))
             {
-                t= (UpgradeType)Random.Range(0, 6);
+                t= (UpgradeType)Random.Range(0, 7);
             }
             exclusions.Add((int)t);
             Upgrade newUpgrade = new Upgrade(t);

@@ -11,9 +11,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float speed;
     int direction;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
         stats = GetComponent<PlayerStats>();
+        GameManager.Instance.StartGame();
         
     }
     private void OnEnable()

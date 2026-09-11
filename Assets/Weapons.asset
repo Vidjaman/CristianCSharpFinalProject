@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b45eab47ff12b2b48887a45ca7e1907b, type: 3}
   m_Name: Weapons
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
-  coolDown: 0.5
+  coolDown: 0.8
   baseDamage: 5
   speed: 9
+  radius: 0
