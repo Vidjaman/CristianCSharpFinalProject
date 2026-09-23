@@ -1,5 +1,10 @@
 using UnityEngine;
 
+public enum EnemyType
+{
+    Chasing,
+    Shooting
+}
 public class EnemyHurtBox : MonoBehaviour
 {
     public float Damage;

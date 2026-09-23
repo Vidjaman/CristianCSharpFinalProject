@@ -1055,23 +1055,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   player: {fileID: 0}
-  enemyList:
-  - minLevel: 0
-    maxLevel: 7
-    prefab: {fileID: 9131268441554173708, guid: 31788491d59fcb8418becb956a24c372, type: 3}
-  - minLevel: 4
-    maxLevel: 0
-    prefab: {fileID: 9131268441554173708, guid: 6f406c4c52fa5684daeaada863a8ac5b, type: 3}
-  - minLevel: 7
-    maxLevel: 0
-    prefab: {fileID: 9131268441554173708, guid: b0446c19a8f75294d97bfd084a433eee, type: 3}
-  - minLevel: 15
-    maxLevel: 0
-    prefab: {fileID: 9131268441554173708, guid: c5cc2f07cec237940beb66469da6fa19, type: 3}
+  enemyList: []
   textPrefab: {fileID: 4301367608790795934, guid: cb6f5664df9720647bad4fcdc36aff06, type: 3}
   spawnDelay: 1
-  spawnAbleEnemies:
-  - {fileID: 9131268441554173708, guid: 31788491d59fcb8418becb956a24c372, type: 3}
+  rangedEnemyTemplate: {fileID: 2999507159133027096, guid: 6f406c4c52fa5684daeaada863a8ac5b, type: 3}
+  normalEnemyTemplate: {fileID: 2800106093896297750, guid: 31788491d59fcb8418becb956a24c372, type: 3}
+  spawnAbleEnemies: []
   enemyCap: 1000
   enemyCount: 0
   enemy:

@@ -17,11 +17,14 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public GameObject player;
-    public EnemySpawnConditions[] enemyList;
+    public SO_Enemy[] enemyList;
     [SerializeField] GameObject textPrefab;
     public float spawnDelay=1;
 
-    public List<GameObject> spawnAbleEnemies;
+    [SerializeField] RangedEnemy rangedEnemyTemplate;
+    [SerializeField] Enemy normalEnemyTemplate;
+
+    public List<SO_Enemy> spawnAbleEnemies;
     [SerializeField] int enemyCap;
     public int enemyCount;
    
@@ -42,21 +45,32 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(spawnDelay);
         if (enemyCount <= enemyCap)
         {
-            GameObject Enemy = spawnAbleEnemies[UnityEngine.Random.Range(0, spawnAbleEnemies.Count)];
-            Instantiate(Enemy, player.transform.position + ((Vector3)UnityEngine.Random.insideUnitCircle.normalized * spawnRadius), Quaternion.identity);
+            SO_Enemy enemy= spawnAbleEnemies[UnityEngine.Random.Range(0, spawnAbleEnemies.Count)];
+            if (enemy.enemyType == EnemyType.Shooting)
+            {
+                RangedEnemy newEnemy = Instantiate(rangedEnemyTemplate, player.transform.position + ((Vector3)UnityEngine.Random.insideUnitCircle.normalized * spawnRadius), Quaternion.identity);
+                newEnemy.enemyStats = enemy;
+            }
+            if (enemy.enemyType == EnemyType.Chasing)
+            {
+                Enemy newEnemy = Instantiate(normalEnemyTemplate, player.transform.position + ((Vector3)UnityEngine.Random.insideUnitCircle.normalized * spawnRadius), Quaternion.identity);
+                newEnemy.enemyStats = enemy;
+            }
+
             enemyCount++;
         }
         StartCoroutine(SpawnEnemy());
     }
     public void AddRemoveEnemies(int level)
     {
-        foreach(EnemySpawnConditions e in enemyList)
+        
+        foreach(SO_Enemy e in enemyList)
         {
-            if (level > e.minLevel && (level < e.maxLevel ||e.maxLevel==0))
+            if (level > e.startLevel && (level < e.endLevel ||e.endLevel==0))
             {
-                if(!spawnAbleEnemies.Contains(e.prefab)) spawnAbleEnemies.Add(e.prefab);
+                if(!spawnAbleEnemies.Contains(e)) spawnAbleEnemies.Add(e);
             } 
-            else if (spawnAbleEnemies.Contains(e.prefab)) spawnAbleEnemies.Remove(e.prefab);
+            else if (spawnAbleEnemies.Contains(e)) spawnAbleEnemies.Remove(e);
         }
 }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -83,6 +97,8 @@ public class GameManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name != "MainGame" ) 
             return;
+        enemyList = Resources.LoadAll<SO_Enemy>("Enemies");
+        AddRemoveEnemies(1);
         player = GameObject.FindWithTag("Player");
         StartCoroutine(SpawnEnemy());
     }

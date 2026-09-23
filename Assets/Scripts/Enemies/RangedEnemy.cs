@@ -8,11 +8,17 @@ public class RangedEnemy : Enemy
     [SerializeField] float distanceToKeep;
     [SerializeField] GameObject shotPrefab;
     [SerializeField] float shotSpeed;
-  
+
     public override void SetTargetPosition()           
     {
         Vector3 vectorTowardsPlayer=(transform.position-Player.transform.position).normalized;
         targetPosition = Player.transform.position + (vectorTowardsPlayer * distanceToKeep);
+    }
+    public override void Start()
+    {
+        base.Start();
+        shotSpeed = enemyStats.shotSpeed;
+        distanceToKeep = enemyStats.distanceToKeep;
     }
    
     void OnBecameVisible()

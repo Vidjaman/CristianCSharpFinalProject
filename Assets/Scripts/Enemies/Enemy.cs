@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] float speed;
     Rigidbody2D rb;
     Animator animator;
+    public SO_Enemy enemyStats;
 
     public float expYield;
 
@@ -21,6 +22,11 @@ public class Enemy : MonoBehaviour
         Player=GameManager.Instance.player;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        speed = enemyStats.Speed;
+        expYield = enemyStats.expYield;
+        Health = enemyStats.MaxHP;
+        GetComponent<SpriteRenderer>().sprite = enemyStats.Sprite;
+
     }
     Vector3 DirectionTowardsTarget()
     {

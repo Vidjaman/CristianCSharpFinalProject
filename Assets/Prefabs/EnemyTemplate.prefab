@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 4047807954003897275}
   - component: {fileID: 6338004138694356069}
   m_Layer: 6
-  m_Name: Enemy
+  m_Name: EnemyTemplate
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -230,6 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   Health: 10
   speed: 6
+  enemyStats: {fileID: 0}
   expYield: 20
 --- !u!61 &7489215066978807043
 BoxCollider2D:
