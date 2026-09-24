@@ -34,11 +34,17 @@ public class GameManager : MonoBehaviour
     float _HighScore;
     public float GetHighScore()
     {
+        if (PlayerPrefs.HasKey("HighScore"))
+        {
+            _HighScore = PlayerPrefs.GetFloat("HighScore");
+        }
         return _HighScore;
     }
     public void SetHighScore(float score)
     {
         if(score> _HighScore) _HighScore = score;
+
+        PlayerPrefs.SetFloat("HighScore", score);
     }
     IEnumerator SpawnEnemy()
     {
@@ -95,6 +101,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame() 
     {
+
         if (SceneManager.GetActiveScene().name != "MainGame" ) 
             return;
         enemyList = Resources.LoadAll<SO_Enemy>("Enemies");

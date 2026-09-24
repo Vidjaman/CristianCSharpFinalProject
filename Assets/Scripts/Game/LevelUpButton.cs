@@ -125,7 +125,12 @@ public class LevelUpButton : MonoBehaviour
         newWeapon.weaponData = upgradeToGive.newWeaponData;
         Color color1 = Random.ColorHSV();
         Color color2 = Random.ColorHSV();
-        newWeapon.bulletGradient = new ParticleSystem.MinMaxGradient(color1, color2).gradient;
+        var colors = new GradientColorKey[2];
+        colors[0] = new GradientColorKey(color1,0);
+        colors[1] = new GradientColorKey(color2, 1);
+        Gradient newGradient = new Gradient();
+        newGradient.SetColorKeys(colors);
+        newWeapon.bulletGradient = newGradient;
     }
     void GiveNewMeleeWeapon()
     {

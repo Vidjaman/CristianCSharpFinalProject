@@ -78,7 +78,7 @@ public class PlayerStats : MonoBehaviour
         IncreaseStat(StatType.Strength, 10);
         IncreaseStat(StatType.Defence, 10);
         IncreaseStat(StatType.Speed, 10);
-        GameManager.Instance.spawnDelay *= 0.9f;
+        GameManager.Instance.spawnDelay *= 0.93f;
         GameManager.Instance.AddRemoveEnemies(Level);
         levelSlider.value = EXP / XPUntillNextLevel;
         levelText.text = "Level " + Level;
