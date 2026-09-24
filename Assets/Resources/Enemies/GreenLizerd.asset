@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a90473d8c89bc54baee53301a082756, type: 3}
-  m_Name: Friend
+  m_Name: GreenLizerd
   m_EditorClassIdentifier: Assembly-CSharp::SO_Enemy
-  MaxHP: 20
-  EnemyName: Friend
-  Sprite: {fileID: -7010342202941483130, guid: cae7b7b5933381247a6e671167bc47e5, type: 3}
+  MaxHP: 28
+  EnemyName: GreenLizerd
+  Sprite: {fileID: 2313363125642479182, guid: 83d15e1381762e941b2561d5de156a21, type: 3}
   enemyType: 0
-  Speed: 25
-  expYield: 50
+  Speed: 10
+  expYield: 29
   shotSpeed: 0
   distanceToKeep: 0
-  startLevel: 15
+  startLevel: 8
   endLevel: 0

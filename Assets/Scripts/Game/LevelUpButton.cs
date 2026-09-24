@@ -60,6 +60,10 @@ public class LevelUpButton : MonoBehaviour
         {
             text.text = "Heal";
         }
+        if (upgradeToGive.type == UpgradeType.meleeWeaponSizeUp)
+        {
+            text.text = "Increase Melee Weapon size";
+        }
     }
     PlayerStats playerStats;
     public Upgrade upgradeToGive;
@@ -99,6 +103,15 @@ public class LevelUpButton : MonoBehaviour
             case UpgradeType.heal:
                 playerStats.GetComponent<PlayerHealth>().HealthProp += 10;
                 break;
+            case UpgradeType.meleeWeaponSizeUp:
+                foreach (MeleeWeapon m in playerStats.GetComponentsInChildren<MeleeWeapon>()) 
+                {
+                    if(m.transform.localScale.x<6f)
+                        m.transform.localScale *= 1.35f;
+                }
+                break;
+            default:
+                break;
 
 
         }
@@ -110,8 +123,9 @@ public class LevelUpButton : MonoBehaviour
     {
         RangedWeapon newWeapon= Instantiate(GetComponentInParent<LevelUpRandomizer>().rangedWeaponTemplate, playerStats.transform).GetComponent<RangedWeapon>();
         newWeapon.weaponData = upgradeToGive.newWeaponData;
-        newWeapon.color1 = Random.ColorHSV();
-        newWeapon.color2 = Random.ColorHSV();
+        Color color1 = Random.ColorHSV();
+        Color color2 = Random.ColorHSV();
+        newWeapon.bulletGradient = new ParticleSystem.MinMaxGradient(color1, color2).gradient;
     }
     void GiveNewMeleeWeapon()
     {

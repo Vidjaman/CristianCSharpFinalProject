@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a90473d8c89bc54baee53301a082756, type: 3}
-  m_Name: Friend
+  m_Name: X Parasite
   m_EditorClassIdentifier: Assembly-CSharp::SO_Enemy
   MaxHP: 20
-  EnemyName: Friend
-  Sprite: {fileID: -7010342202941483130, guid: cae7b7b5933381247a6e671167bc47e5, type: 3}
+  EnemyName: X Parasite
+  Sprite: {fileID: 21300000, guid: b0b430874cd602d459409c3af000ab16, type: 3}
   enemyType: 0
-  Speed: 25
-  expYield: 50
+  Speed: 12
+  expYield: 40
   shotSpeed: 0
   distanceToKeep: 0
-  startLevel: 15
+  startLevel: 7
   endLevel: 0

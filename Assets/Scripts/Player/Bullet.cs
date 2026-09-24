@@ -8,20 +8,20 @@ public class Bullet : MonoBehaviour
 
     public ParticleSystem particle;
 
-    public Color startColor;
-    public Color endColor;
-    
+    public Gradient gradient;
 
-    
+
+
+
     private void Start()
     {
         if (particle == null) return;
         var pfxMain = particle.main;
-        pfxMain.startColor = startColor;
+        pfxMain.startColor = Color.white;
        
         
         ParticleSystem.ColorOverLifetimeModule colorModule = particle.colorOverLifetime;
-        colorModule.color = new ParticleSystem.MinMaxGradient(startColor,endColor);
+        colorModule.color = gradient;
     }
     private void Update()
     {

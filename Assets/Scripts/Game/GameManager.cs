@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
         
         foreach(SO_Enemy e in enemyList)
         {
-            if (level > e.startLevel && (level < e.endLevel ||e.endLevel==0))
+            if (level >= e.startLevel && (level <= e.endLevel ||e.endLevel==0))
             {
                 if(!spawnAbleEnemies.Contains(e)) spawnAbleEnemies.Add(e);
             } 
@@ -98,6 +98,7 @@ public class GameManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name != "MainGame" ) 
             return;
         enemyList = Resources.LoadAll<SO_Enemy>("Enemies");
+        spawnDelay = 1;
         AddRemoveEnemies(1);
         player = GameObject.FindWithTag("Player");
         StartCoroutine(SpawnEnemy());

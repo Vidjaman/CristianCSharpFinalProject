@@ -7923,8 +7923,8 @@ MonoBehaviour:
   enemyList: []
   textPrefab: {fileID: 4301367608790795934, guid: cb6f5664df9720647bad4fcdc36aff06, type: 3}
   spawnDelay: 1
-  rangedEnemyTemplate: {fileID: 0}
-  normalEnemyTemplate: {fileID: 0}
+  rangedEnemyTemplate: {fileID: 2999507159133027096, guid: 6f406c4c52fa5684daeaada863a8ac5b, type: 3}
+  normalEnemyTemplate: {fileID: 2800106093896297750, guid: 31788491d59fcb8418becb956a24c372, type: 3}
   spawnAbleEnemies: []
   enemyCap: 1000
   enemyCount: 0

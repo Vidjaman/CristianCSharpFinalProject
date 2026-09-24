@@ -14,5 +14,6 @@ public class SO_Enemy : ScriptableObject
     public float distanceToKeep;
     public int startLevel;
     public int endLevel;
+    public Gradient bulletColorGradient;
 
 }

@@ -35,6 +35,7 @@ public class RangedEnemy : Enemy
         GameObject shot = Instantiate(shotPrefab,transform.position,Quaternion.identity);
         shot.GetComponent<Bullet>().direction = (Player.transform.position - transform.position).normalized;
         shot.GetComponent<Bullet>().speed = shotSpeed;
+        shot.GetComponent<Bullet>().gradient = enemyStats.bulletColorGradient;
         StartCoroutine(Shoot());
     }
 }

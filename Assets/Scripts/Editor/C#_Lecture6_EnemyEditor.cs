@@ -25,6 +25,7 @@ public class EnemyEditor : EditorWindow
     FloatField expField;
     IntegerField startLevelField;
     IntegerField endLevelField;
+    GradientField bulletGradientField;
     [MenuItem("FutureGames/Enemy Creator")]
     static void Open()
     {
@@ -51,6 +52,7 @@ public class EnemyEditor : EditorWindow
         spriteField = new ObjectField("Sprite");
         typeField = new EnumField("Enemy Type", EnemyType.Chasing);
         shotSpeedField = new FloatField("Bullet Speed");
+        bulletGradientField = new GradientField("Enemy Bullet Color");
         speedField = new FloatField("Movement Speed");
         distanceField = new FloatField("Distance to keep from player");
         expField = new FloatField("Exp Yield");
@@ -74,6 +76,7 @@ public class EnemyEditor : EditorWindow
         root.Add(typeField);
         root.Add(distanceField);
         root.Add(shotSpeedField);
+        root.Add(bulletGradientField);
         root.Add(startLevelField);
         root.Add(endLevelField);
         root.Add(createButton);
@@ -84,6 +87,7 @@ public class EnemyEditor : EditorWindow
     {
         shotSpeedField.visible = (EnemyType)typeField.value == EnemyType.Shooting;
         distanceField.visible = (EnemyType)typeField.value == EnemyType.Shooting;
+        bulletGradientField.visible=(EnemyType)typeField.value==EnemyType.Shooting;
     }
 
     void CreateAsset()
@@ -112,6 +116,7 @@ public class EnemyEditor : EditorWindow
         enemy.shotSpeed= shotSpeedField.value;
         enemy.startLevel= startLevelField.value;
         enemy.endLevel= endLevelField.value;
+        enemy.bulletColorGradient = bulletGradientField.value;
 
         string safeName = string.Join("_", nameField.value.Split(Path.GetInvalidFileNameChars()));
         string path = AssetDatabase.GenerateUniqueAssetPath($"{ResourcesPath}/{safeName}.asset");

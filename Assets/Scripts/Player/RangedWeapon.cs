@@ -16,13 +16,13 @@ public class RangedWeapon : Weapon
     
 
     [SerializeField] Bullet bulletPrefab;
-    public Color color1;
-    public Color color2;
+    public Gradient bulletGradient;
     protected override void Start()
     {
         speed = weaponData.speed;
         base.Start();
     }
+    
     public override void Attack()
     {
         base.Attack();
@@ -44,8 +44,7 @@ public class RangedWeapon : Weapon
         Bullet bulletInstance = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         bulletInstance.direction= direction;
         bulletInstance.speed = speed;
-        bulletInstance.startColor = color1;
-        bulletInstance.endColor = color2;
+        bulletInstance.gradient = bulletGradient;
         bulletInstance.GetComponent<WeaponHurtBox>().damage = realDamage;
         bulletInstance.GetComponent<WeaponHurtBox>().pierce = pierce;
     }
