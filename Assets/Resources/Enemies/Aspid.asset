@@ -21,7 +21,7 @@ MonoBehaviour:
   shotSpeed: 10
   distanceToKeep: 10
   startLevel: 3
-  endLevel: 0
+  endLevel: 27
   bulletColorGradient:
     serializedVersion: 2
     key0: {r: 1, g: 0.8258381, b: 0, a: 1}

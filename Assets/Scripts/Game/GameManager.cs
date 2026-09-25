@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame() 
     {
-
+        StopAllCoroutines();
         if (SceneManager.GetActiveScene().name != "MainGame" ) 
             return;
         enemyList = Resources.LoadAll<SO_Enemy>("Enemies");

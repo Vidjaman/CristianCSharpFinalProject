@@ -5,7 +5,7 @@ public class RetryButton : MonoBehaviour
 {
     public void Restart()
     {
-        Time.timeScale = 1;
+        Time.timeScale = 1;;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created

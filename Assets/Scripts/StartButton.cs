@@ -18,6 +18,7 @@ public class StartButton : MonoBehaviour
     public void OnPress()
     {
         Time.timeScale = 1;
+        GameManager.Instance.spawnDelay = 1;
         SceneManager.LoadScene(sceneName);
     }
 }
