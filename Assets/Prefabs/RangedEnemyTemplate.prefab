@@ -327,6 +327,7 @@ MonoBehaviour:
   speed: 4
   enemyStats: {fileID: 0}
   expYield: 30
+  explosionPrefab: {fileID: 5268167439415494675, guid: 3932aa8cd7dfea744a30120e5e64f2ad, type: 3}
   distanceToKeep: 10
   shotPrefab: {fileID: 8271981550017206518, guid: 9a6ad3208042aac42b1300c568f677ca, type: 3}
   shotSpeed: 10

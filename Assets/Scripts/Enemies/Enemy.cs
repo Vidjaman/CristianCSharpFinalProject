@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     public SO_Enemy enemyStats;
 
     public float expYield;
-
+    [SerializeField] GameObject explosionPrefab;
     protected Vector3 targetPosition;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -57,6 +57,8 @@ public class Enemy : MonoBehaviour
     }
     private void OnDestroy()
     {
+        GameObject boom = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        boom.transform.localScale= Vector3.one*0.5f;
         GameManager.Instance.enemyCount--;
     }
 }

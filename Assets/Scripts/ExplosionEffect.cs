@@ -1,9 +1,7 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class StartButton : MonoBehaviour
+public class ExplosionEffect : MonoBehaviour
 {
-    [SerializeField] string sceneName;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,9 +13,8 @@ public class StartButton : MonoBehaviour
     {
         
     }
-    public void OnPress()
+    public void Kill()
     {
-        Time.timeScale = 1;
-        SceneManager.LoadScene(sceneName);
+        Destroy(gameObject);
     }
 }
