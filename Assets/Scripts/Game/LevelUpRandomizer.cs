@@ -71,8 +71,9 @@ public class LevelUpRandomizer : MonoBehaviour
         
         foreach (LevelUpButton b in buttons)
         {
-            UpgradeType t=UpgradeType.statChange;
-            if (player.GetComponentInChildren<RangedWeapon>() == null) exclusions.Add(4);
+            UpgradeType t = (UpgradeType)Random.Range(0, 8);
+            if (player.GetComponentInChildren<RangedWeapon>() == null)
+                exclusions.Add(4); //if you dont have a ranged weapon you cant get ranged cooldown down
             while (exclusions.Contains((int)t))
             {
                 t= (UpgradeType)Random.Range(0, 8);

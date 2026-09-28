@@ -25,7 +25,8 @@ public class Weapon : MonoBehaviour
     {
         coolDown = weaponData.coolDown;
         baseDamage= weaponData.baseDamage;
-        playerStats = GetComponentInParent<PlayerStats>();
+        if(transform.parent!=null) 
+            playerStats = GetComponentInParent<PlayerStats>();
         StartCoroutine(AttackAfterCooldown());
     }
 

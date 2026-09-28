@@ -10,6 +10,10 @@ public class PlayerMovement : MonoBehaviour
     PlayerStats stats;
     [SerializeField] float speed;
     int direction;
+    public int GetDirection()
+    {
+        return direction;
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {

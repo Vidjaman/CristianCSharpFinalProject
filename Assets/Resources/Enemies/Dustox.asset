@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a90473d8c89bc54baee53301a082756, type: 3}
-  m_Name: Pandemonium
+  m_Name: Dustox
   m_EditorClassIdentifier: Assembly-CSharp::SO_Enemy
-  MaxHP: 100
-  EnemyName: Pandemonium
-  Sprite: {fileID: 21300000, guid: 67dc0b886f1d3364fbd8371cfa05e338, type: 3}
+  MaxHP: 26
+  EnemyName: Dustox
+  Sprite: {fileID: -4297343630122360647, guid: 122501f1cbf69f64a9a9b65eb8ee8421, type: 3}
   enemyType: 0
-  Speed: 30
-  expYield: 100
+  Speed: 24
+  expYield: 70
   shotSpeed: 0
   distanceToKeep: 0
-  startLevel: 35
+  startLevel: 16
   endLevel: 0
   bulletColorGradient:
     serializedVersion: 2

@@ -73,7 +73,7 @@ public class LevelUpButton : MonoBehaviour
         switch(upgradeToGive.type)
         {
             case UpgradeType.statChange:
-                playerStats.IncreaseStat(upgradeToGive.stat, 20);
+                playerStats.IncreaseStat(upgradeToGive.stat, 50);
                 break;
             case UpgradeType.newRangedWeapon:
                 GiveNewRangedWeapon();
@@ -140,7 +140,7 @@ public class LevelUpButton : MonoBehaviour
     }
     public void GiveNewShieldWeapon()
     {
-        OrbitShield newWeapon= Instantiate(GetComponentInParent<LevelUpRandomizer>().shieldTemplate,playerStats.transform).GetComponent<OrbitShield>();
+        OrbitShield newWeapon= Instantiate(GetComponentInParent<LevelUpRandomizer>().shieldTemplate,playerStats.transform.position,Quaternion.identity).GetComponent<OrbitShield>();
         newWeapon.weaponData = upgradeToGive.newWeaponData;
     }
 
