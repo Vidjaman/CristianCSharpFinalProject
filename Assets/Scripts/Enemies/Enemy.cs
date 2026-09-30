@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] protected float Health=10;
     protected GameObject Player;
-    [SerializeField] float speed;
+    [SerializeField] protected float speed;
     Rigidbody2D rb;
     Animator animator;
     public SO_Enemy enemyStats;
@@ -55,8 +55,14 @@ public class Enemy : MonoBehaviour
         SetTargetPosition();
         rb.linearVelocity= DirectionTowardsTarget() * speed;
     }
+    bool isQuitting = false;
+    private void OnApplicationQuit()
+    {
+        isQuitting = true;
+    }
     private void OnDestroy()
     {
+        if (isQuitting) return;
         GameObject boom = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         boom.transform.localScale= Vector3.one*0.5f;
         GameManager.Instance.enemyCount--;

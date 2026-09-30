@@ -112,12 +112,14 @@ public class LevelUpButton : MonoBehaviour
                 break;
             default:
                 break;
+                
 
 
         }
         upgradeToGive = null;
         GetComponentInParent<Animator>().Play("LevelUpClose");
         Time.timeScale = 1;
+        playerStats.XP = 0;
     }
     void GiveNewRangedWeapon()
     {

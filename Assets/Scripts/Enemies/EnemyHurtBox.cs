@@ -3,7 +3,8 @@ using UnityEngine;
 public enum EnemyType
 {
     Chasing,
-    Shooting
+    Shooting,
+    Orbiting
 }
 public class EnemyHurtBox : MonoBehaviour
 {

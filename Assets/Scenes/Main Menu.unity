@@ -1060,6 +1060,7 @@ MonoBehaviour:
   spawnDelay: 1
   rangedEnemyTemplate: {fileID: 2999507159133027096, guid: 6f406c4c52fa5684daeaada863a8ac5b, type: 3}
   normalEnemyTemplate: {fileID: 2800106093896297750, guid: 31788491d59fcb8418becb956a24c372, type: 3}
+  orbitEnemyTemplate: {fileID: 7078862061886835254, guid: 5d606f02f8e37354380ffe858c2a4f0c, type: 3}
   spawnAbleEnemies: []
   enemyCap: 1000
   enemyCount: 0
@@ -1067,6 +1068,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   spawnRadius: 45
+  pause: {fileID: 8755631292386733864, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  pauseAnimator: {fileID: 0}
 --- !u!4 &1558234870
 Transform:
   m_ObjectHideFlags: 0

@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
     {
         speed = 10 * (stats.Speed / 100);
         moveValue=Move.action.ReadValue<Vector2>();
-        if (moveValue.x != 0) direction = Math.Sign(moveValue.x);
+        if (moveValue.x != 0&&Time.timeScale!=0) direction = Math.Sign(moveValue.x);
         transform.position += (Vector3)moveValue * speed * Time.deltaTime;
         if (direction == 1)
         {

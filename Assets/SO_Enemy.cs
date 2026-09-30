@@ -15,5 +15,6 @@ public class SO_Enemy : ScriptableObject
     public int startLevel;
     public int endLevel;
     public Gradient bulletColorGradient;
+    public float orbitSpeed;
 
 }

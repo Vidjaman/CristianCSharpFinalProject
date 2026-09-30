@@ -16,7 +16,7 @@ MonoBehaviour:
   EnemyName: Dustox
   Sprite: {fileID: -4297343630122360647, guid: 122501f1cbf69f64a9a9b65eb8ee8421, type: 3}
   enemyType: 0
-  Speed: 24
+  Speed: 18
   expYield: 70
   shotSpeed: 0
   distanceToKeep: 0
@@ -52,3 +52,4 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
+  orbitSpeed: 0

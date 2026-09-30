@@ -58,10 +58,13 @@ public class LevelUpRandomizer : MonoBehaviour
     [SerializeField] public GameObject rangedWeaponTemplate;
     public GameObject shieldTemplate;
 
+    
+
     private void Start()
     {
         animator = GetComponent<Animator>();
         player = GameManager.Instance.player;
+        GameManager.Instance.pauseAnimator=animator;
     }
     public void OnLevelUp()
     {

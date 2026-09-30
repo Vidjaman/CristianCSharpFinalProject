@@ -16,7 +16,7 @@ public class WeaponData : ScriptableObject
     public void Randomize()
     {
         coolDown = Random.Range(0.5f, 2f);
-        baseDamage = Random.Range(2, 6);
+        baseDamage = Random.Range(4, 6);
         speed = Random.Range(8, 20);
         radius = Random.Range(3, 7f);
     }

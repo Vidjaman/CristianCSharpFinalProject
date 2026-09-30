@@ -22,7 +22,7 @@ public class OrbitShield : Weapon
    
     private void Update()
     {
-        angle += Time.deltaTime * speed*pm.GetDirection();
+        angle += Time.deltaTime * speed;
         transform.position=player.position+new Vector3(Mathf.Cos(angle),Mathf.Sin(angle),0f)*orbitRadius;
         transform.eulerAngles= Vector3.zero;
         realDamage = (playerStats.Strength / 100) * baseDamage;

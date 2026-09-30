@@ -5,6 +5,7 @@ using TMPro;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 [Serializable] public struct EnemySpawnConditions
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] RangedEnemy rangedEnemyTemplate;
     [SerializeField] Enemy normalEnemyTemplate;
+    [SerializeField] OrbitEnemy orbitEnemyTemplate;
 
     public List<SO_Enemy> spawnAbleEnemies;
     [SerializeField] int enemyCap;
@@ -30,6 +32,7 @@ public class GameManager : MonoBehaviour
    
     [SerializeField] public LayerMask enemy;
     [SerializeField] float spawnRadius;
+    [SerializeField] InputActionReference pause;
 
     float _HighScore;
     public float GetHighScore()
@@ -39,6 +42,36 @@ public class GameManager : MonoBehaviour
             _HighScore = PlayerPrefs.GetFloat("HighScore");
         }
         return _HighScore;
+    }
+    bool isPaused = false;
+    
+    public Animator pauseAnimator;
+    
+    private void OnDisable()
+    {
+        pause.action.Disable();
+        pause.action.performed -= OnPausePressed;
+    }
+    public void OnPausePressed(InputAction.CallbackContext context)
+    {
+        if (pauseAnimator == null) return;
+        if (pauseAnimator.GetCurrentAnimatorStateInfo(0).IsName("LevelUpClose")||
+            pauseAnimator.GetCurrentAnimatorStateInfo(0).IsName("LevelUp")
+            )
+        {
+            return;
+        }
+        isPaused = !isPaused;
+        if (isPaused)
+        {
+            pauseAnimator.Play("Pause");
+            Time.timeScale = 0;
+        }
+        else
+        {
+            pauseAnimator.Play("UnPause");
+            Time.timeScale = 1;
+        }
     }
     public void SetHighScore(float score)
     {
@@ -60,6 +93,11 @@ public class GameManager : MonoBehaviour
             if (enemy.enemyType == EnemyType.Chasing)
             {
                 Enemy newEnemy = Instantiate(normalEnemyTemplate, player.transform.position + ((Vector3)UnityEngine.Random.insideUnitCircle.normalized * spawnRadius), Quaternion.identity);
+                newEnemy.enemyStats = enemy;
+            }
+            if (enemy.enemyType == EnemyType.Orbiting)
+            {
+                Enemy newEnemy = Instantiate(orbitEnemyTemplate, player.transform.position + ((Vector3)UnityEngine.Random.insideUnitCircle.normalized * spawnRadius), Quaternion.identity);
                 newEnemy.enemyStats = enemy;
             }
 
@@ -107,8 +145,12 @@ public class GameManager : MonoBehaviour
         enemyList = Resources.LoadAll<SO_Enemy>("Enemies");
         spawnDelay = 1;
         AddRemoveEnemies(1);
+        isPaused = false;
+        Time.timeScale = 1;
         player = GameObject.FindWithTag("Player");
         StartCoroutine(SpawnEnemy());
+        pause.action.Enable();
+        pause.action.performed += OnPausePressed;
     }
     
 

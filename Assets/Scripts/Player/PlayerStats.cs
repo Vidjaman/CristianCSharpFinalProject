@@ -71,7 +71,6 @@ public class PlayerStats : MonoBehaviour
     void LevelUp()
     {
         confetti.Play();
-        EXP = 0;
         Level++;
         XPUntillNextLevel = 100 + (10 * Level * Level);
         levelUpManager.OnLevelUp();
@@ -80,7 +79,7 @@ public class PlayerStats : MonoBehaviour
         IncreaseStat(StatType.Speed, 10);
         GameManager.Instance.spawnDelay *= 0.93f;
         GameManager.Instance.AddRemoveEnemies(Level);
-        levelSlider.value = EXP / XPUntillNextLevel;
+        levelSlider.value = 2;
         levelText.text = "Level " + Level;
 
 
