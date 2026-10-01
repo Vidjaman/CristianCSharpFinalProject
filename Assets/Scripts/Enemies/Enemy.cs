@@ -35,7 +35,8 @@ public class Enemy : MonoBehaviour
     public void Damage(float damage)
     {
         Health -= damage;
-        GameManager.Instance.SpawnText((damage*10).ToString(), Color.red, transform.position);
+        float textDamage = MathF.Round(damage * 10);
+        GameManager.Instance.SpawnText((textDamage).ToString(), Color.red, transform.position);
         if (Health <= 0)
         {
             Destroy(gameObject);

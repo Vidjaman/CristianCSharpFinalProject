@@ -19,10 +19,11 @@ public class LevelUpButton : MonoBehaviour
     }
     public void SetText()
     {
-        if (upgradeToGive.type == UpgradeType.statChange)
+        text.text = upgradeToGive.data.upgradeText;
+        /*if (upgradeToGive.data.upgradeType == UpgradeType.statChange)
         {
             text.text = "Stat Upgrade";
-            switch (upgradeToGive.stat)
+            switch (upgradeToGive.data.statType)
             {
                 case StatType.Strength:
                     text.text += "\nStrength";
@@ -36,44 +37,47 @@ public class LevelUpButton : MonoBehaviour
             }
             
         }
-        if (upgradeToGive.type == UpgradeType.newRangedWeapon)
+        if (upgradeToGive.data.upgradeType == UpgradeType.newRangedWeapon)
         {
             text.text = "New Ranged Weapon";
         }
-        if (upgradeToGive.type == UpgradeType.reduceCoolDownMelee)
+        if (upgradeToGive.data.upgradeType == UpgradeType.reduceCoolDownMelee)
         {
-            text.text = "Reduce Melee Weapon Cooldowns";
+            text.text = "Reduce Melee\nWeapon Cooldowns";
         }
-        if (upgradeToGive.type == UpgradeType.newMeleeWeapon)
+        if (upgradeToGive.data.upgradeType == UpgradeType.newMeleeWeapon)
         {
             text.text = "New Melee Weapon";
         }
-        if (upgradeToGive.type == UpgradeType.reduceCoolDownRanged)
+        if (upgradeToGive.data.upgradeType == UpgradeType.reduceCoolDownRanged)
         {
-            text.text = "Reduce Ranged Weapon Cooldowns";
+            text.text = "Reduce Ranged\nWeapon Cooldowns";
         }
-        if (upgradeToGive.type == UpgradeType.newShieldWeapon)
+        if (upgradeToGive.data.upgradeType == UpgradeType.newShieldWeapon)
         {
             text.text = "New Shield";
         }
-        if (upgradeToGive.type == UpgradeType.heal)
+        if (upgradeToGive.data.upgradeType == UpgradeType.heal)
         {
             text.text = "Heal";
         }
-        if (upgradeToGive.type == UpgradeType.meleeWeaponSizeUp)
+        if (upgradeToGive.data.upgradeType == UpgradeType.meleeWeaponSizeUp)
         {
-            text.text = "Increase Melee Weapon size";
-        }
+            text.text = "Increase Melee\nWeapon size";
+        }*/
     }
     PlayerStats playerStats;
     public Upgrade upgradeToGive;
     public void GiveUpgrade()
     {
         if (upgradeToGive == null) return;
-        switch(upgradeToGive.type)
+        switch(upgradeToGive.data.upgradeType)
         {
             case UpgradeType.statChange:
-                playerStats.IncreaseStat(upgradeToGive.stat, 50);
+                if (upgradeToGive.data.increaseType == IncreaseType.ADDITIVE)
+                    playerStats.IncreaseStat(upgradeToGive.data.statType, Mathf.RoundToInt(upgradeToGive.data.increaseAmount));
+                else
+                    playerStats.MultiplyStat(upgradeToGive.data.statType, Mathf.RoundToInt(upgradeToGive.data.increaseAmount));
                 break;
             case UpgradeType.newRangedWeapon:
                 GiveNewRangedWeapon();
@@ -82,7 +86,14 @@ public class LevelUpButton : MonoBehaviour
           
                 foreach (MeleeWeapon m in playerStats.GetComponentsInChildren<MeleeWeapon>())
                 {
-                    m.coolDown *= 0.9f;
+                    if (upgradeToGive.data.increaseType == IncreaseType.ADDITIVE)
+                    {
+                        m.coolDown -= upgradeToGive.data.increaseAmount;
+                    }
+                    else
+                    {
+                        m.coolDown *= upgradeToGive.data.increaseAmount;
+                    }
                 }
 
                 break;
@@ -96,18 +107,44 @@ public class LevelUpButton : MonoBehaviour
 
                 foreach (RangedWeapon m in playerStats.GetComponentsInChildren<RangedWeapon>())
                 {
-                    m.coolDown *= 0.8f;
+                    if (upgradeToGive.data.increaseType == IncreaseType.ADDITIVE)
+                    {
+                        m.coolDown -= upgradeToGive.data.increaseAmount;
+                    }
+                    else
+                    {
+                        m.coolDown *= upgradeToGive.data.increaseAmount;
+                    }
                 }
 
                 break;
             case UpgradeType.heal:
-                playerStats.GetComponent<PlayerHealth>().HealthProp += 10;
+                if (upgradeToGive.data.increaseType==IncreaseType.ADDITIVE)
+                {
+                    playerStats.GetComponent<PlayerHealth>().HealthProp += upgradeToGive.data.increaseAmount;
+                }
+                else
+                {
+                    playerStats.GetComponent<PlayerHealth>().HealthProp *=upgradeToGive.data.increaseAmount;
+                }
+                
                 break;
             case UpgradeType.meleeWeaponSizeUp:
                 foreach (MeleeWeapon m in playerStats.GetComponentsInChildren<MeleeWeapon>()) 
                 {
-                    if(m.transform.localScale.x<6f)
-                        m.transform.localScale *= 1.35f;
+                    if(upgradeToGive.data.increaseType != IncreaseType.ADDITIVE)
+                    {
+                        m.transform.localScale *= upgradeToGive.data.increaseAmount;
+                    }
+                    else
+                    {
+                        m.transform.localScale += Vector3.one*upgradeToGive.data.increaseAmount;
+                    }
+                    if (m.transform.localScale.x > 6)
+                    {
+                        m.transform.localScale = Vector3.one * 6;
+                    }
+                    
                 }
                 break;
             default:
@@ -116,7 +153,9 @@ public class LevelUpButton : MonoBehaviour
 
 
         }
+        GetComponentInParent<LevelUpRandomizer>().acquiredUpgrades .Add( upgradeToGive.data);
         upgradeToGive = null;
+        
         GetComponentInParent<Animator>().Play("LevelUpClose");
         Time.timeScale = 1;
         playerStats.XP = 0;

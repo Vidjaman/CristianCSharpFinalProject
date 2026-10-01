@@ -103,6 +103,24 @@ public class PlayerStats : MonoBehaviour
                 break;
         }
     }
+    public void MultiplyStat(StatType type, int value)
+    {
+        switch (type)
+        {
+            case StatType.Strength:
+                Strength *= value;
+                strText.text = "STR: " + Strength;
+                break;
+            case StatType.Speed:
+                Speed *= value;
+                spdText.text = "SPD: " + Speed;
+                break;
+            case StatType.Defence:
+                Defence *= value;
+                defText.text = "DEF: " + Defence;
+                break;
+        }
+    }
     private void Start()
     {
         XPUntillNextLevel = 100;

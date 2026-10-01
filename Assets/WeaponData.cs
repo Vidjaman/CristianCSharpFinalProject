@@ -13,12 +13,12 @@ public class WeaponData : ScriptableObject
       
 
     }
-    public void Randomize()
+    public void Randomize(SO_UpgradeData data)
     {
-        coolDown = Random.Range(0.5f, 2f);
-        baseDamage = Random.Range(4, 6);
-        speed = Random.Range(8, 20);
-        radius = Random.Range(3, 7f);
+        coolDown = Random.Range(data.minWeaponCooldown,data.maxWeaponCooldown);
+        baseDamage = Random.Range(data.minWeaponAttack,data.maxWeaponAttack);
+        speed = Random.Range(data.minWeaponSpeed, data.maxWeaponSpeed);
+        radius = Random.Range(data.minWeaponRadius, data.maxWeaponRadius);
     }
     private void OnEnable()
     {

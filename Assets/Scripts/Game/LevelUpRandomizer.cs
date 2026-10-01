@@ -1,3 +1,4 @@
+using Mono.Cecil;
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,25 +27,33 @@ public enum StatType
     Speed,
     Defence
 }
+public enum IncreaseType
+{
+    ADDITIVE,
+    MULTIPLICATIVE
+}
 public class Upgrade
 {
-   public UpgradeType type;
-    public StatType stat;
+   
 
     public WeaponData newWeaponData;
     public AimMode newWeaponAimMode;
+  
+  
+
+    public SO_UpgradeData data;
 
 
     public GameObject newWeapon;
-    public Upgrade(UpgradeType t)
+    public Upgrade(SO_UpgradeData newData)
     {
 
-        type = t;
-        stat = (StatType)Random.Range(0,3);
-        if( type== UpgradeType.newRangedWeapon||type==UpgradeType.newMeleeWeapon||type==UpgradeType.newShieldWeapon)
+        data = newData;
+
+        if(data.upgradeType== UpgradeType.newRangedWeapon|| data.upgradeType == UpgradeType.newMeleeWeapon|| data.upgradeType == UpgradeType.newShieldWeapon)
         {
             newWeaponData = (WeaponData)ScriptableObject.CreateInstance("WeaponData");
-            newWeaponData.Randomize();
+            newWeaponData.Randomize(newData);
         }
         
     }
@@ -66,22 +75,36 @@ public class LevelUpRandomizer : MonoBehaviour
         player = GameManager.Instance.player;
         GameManager.Instance.pauseAnimator=animator;
     }
+    public List<SO_UpgradeData> acquiredUpgrades=new List<SO_UpgradeData>();
     public void OnLevelUp()
     {
         Time.timeScale = 0;
         animator.Play("LevelUp");
-        List<int> exclusions = new List<int>();
+        List<SO_UpgradeData> exclusions = new List<SO_UpgradeData>();
+        SO_UpgradeData[] upgradeList= Resources.LoadAll<SO_UpgradeData>("Upgrades");
         
         foreach (LevelUpButton b in buttons)
         {
-            UpgradeType t = (UpgradeType)Random.Range(0, 8);
-            if (player.GetComponentInChildren<RangedWeapon>() == null)
-                exclusions.Add(4); //if you dont have a ranged weapon you cant get ranged cooldown down
-            while (exclusions.Contains((int)t))
+            bool acceptable = false;
+            SO_UpgradeData t;
+            t = upgradeList[Random.Range(0, upgradeList.Length)];
+
+            while (acceptable==false)
             {
-                t= (UpgradeType)Random.Range(0, 8);
+                t= upgradeList[Random.Range(0, upgradeList.Length)];
+                if (exclusions.Contains(t))
+                    continue;
+
+                if (t.dependancy != null)
+                {
+                    if (!acquiredUpgrades.Contains(t.dependancy))
+                        continue;   
+                }
+               
+                
+                acceptable = true;
             }
-            exclusions.Add((int)t);
+            exclusions.Add(t);
             Upgrade newUpgrade = new Upgrade(t);
             b.upgradeToGive = newUpgrade;
             b.SetText();

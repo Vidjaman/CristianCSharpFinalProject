@@ -61,17 +61,27 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
-        isPaused = !isPaused;
+        
         if (isPaused)
         {
-            pauseAnimator.Play("Pause");
-            Time.timeScale = 0;
+            UnPause();
         }
         else
         {
-            pauseAnimator.Play("UnPause");
-            Time.timeScale = 1;
+            Pause();
         }
+    }
+    public void Pause()
+    {
+        isPaused = true;
+        pauseAnimator.Play("Pause");
+        Time.timeScale = 0;
+    }
+    public void UnPause()
+    {
+        isPaused = false;
+        Time.timeScale = 1;
+        pauseAnimator.Play("UnPause");
     }
     public void SetHighScore(float score)
     {

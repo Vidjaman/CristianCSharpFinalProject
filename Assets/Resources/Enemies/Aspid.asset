@@ -20,7 +20,7 @@ MonoBehaviour:
   expYield: 30
   shotSpeed: 10
   distanceToKeep: 10
-  startLevel: 3
+  startLevel: 2
   endLevel: 27
   bulletColorGradient:
     serializedVersion: 2
@@ -52,3 +52,4 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
+  orbitSpeed: 32.63
