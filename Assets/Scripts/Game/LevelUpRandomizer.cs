@@ -68,7 +68,31 @@ public class LevelUpRandomizer : MonoBehaviour
     public GameObject shieldTemplate;
 
     
+    SO_UpgradeData RandomWeighted()
+    {
+        SO_UpgradeData[] upgradeList = Resources.LoadAll<SO_UpgradeData>("Upgrades");
+        float totalWeight = 0;
+        foreach(SO_UpgradeData upgrade in upgradeList)
+        {
+            totalWeight += 1 / upgrade.upgradeLevel;
+        }
+        float randomWeight=Random.Range(0, totalWeight);
 
+        SO_UpgradeData selectedUpgrade=upgradeList[0];
+        float cumulativeWeight = 0;
+        foreach (SO_UpgradeData upgrade in upgradeList)
+        {
+            cumulativeWeight += 1 / upgrade.upgradeLevel;
+            if (randomWeight <= cumulativeWeight)
+            {
+                selectedUpgrade = upgrade;
+                break;
+                
+            }
+        }
+        return selectedUpgrade;
+
+    }
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -87,11 +111,11 @@ public class LevelUpRandomizer : MonoBehaviour
         {
             bool acceptable = false;
             SO_UpgradeData t;
-            t = upgradeList[Random.Range(0, upgradeList.Length)];
+            t = RandomWeighted();
 
             while (acceptable==false)
             {
-                t= upgradeList[Random.Range(0, upgradeList.Length)];
+                t = RandomWeighted();
                 if (exclusions.Contains(t))
                     continue;
 

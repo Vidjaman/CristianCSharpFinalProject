@@ -18,6 +18,7 @@ MonoBehaviour:
   increaseAmount: 0
   upgradeText: New Shield
   dependancy: {fileID: 0}
+  upgradeLevel: 1
   minWeaponCooldown: 0
   maxWeaponCooldown: 0
   minWeaponAttack: 4

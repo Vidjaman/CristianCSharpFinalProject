@@ -18,3 +18,12 @@ MonoBehaviour:
   increaseAmount: 50
   upgradeText: Speed Up
   dependancy: {fileID: 0}
+  upgradeLevel: 1
+  minWeaponCooldown: 0
+  maxWeaponCooldown: 0
+  minWeaponAttack: 0
+  maxWeaponAttack: 0
+  minWeaponSpeed: 0
+  maxWeaponSpeed: 0
+  minWeaponRadius: 0
+  maxWeaponRadius: 0

@@ -786,7 +786,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -370, y: 219.75504}
+  m_AnchoredPosition: {x: -369.99997, y: 219.75504}
   m_SizeDelta: {x: 0, y: -26.490051}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &258843020
@@ -9329,6 +9329,7 @@ MonoBehaviour:
   maxComboTimer: 3
   scoreText: {fileID: 1677052835}
   comboText: {fileID: 66062004}
+  maxLevel: 40
   Score: 0
   confetti: {fileID: 1339146141}
   XPUntillNextLevel: 0
@@ -11421,6 +11422,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2460153970348655525, guid: be587eb7cfa77884cb2b8296340864d7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548148932560931905, guid: be587eb7cfa77884cb2b8296340864d7, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548148932560931905, guid: be587eb7cfa77884cb2b8296340864d7, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548148932560931905, guid: be587eb7cfa77884cb2b8296340864d7, type: 3}
+      propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

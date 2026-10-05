@@ -55,6 +55,7 @@ public class UpgradeEditor : EditorWindow
         increaseTypeField=new EnumField("Increase Type", IncreaseType.ADDITIVE);
         statTypeField = new EnumField("Stat Type", StatType.Strength);
         dependancyField = new ObjectField("Require other upgrade?");
+        dependancyField.objectType= typeof(SO_UpgradeData);
 
 
         minAttackField = new FloatField("New Weapon Min Strenth");
@@ -69,10 +70,12 @@ public class UpgradeEditor : EditorWindow
         statusLabel.style.whiteSpace = WhiteSpace.Normal;
 
         root.Add(nameField);
+        root.Add(upgradeTypeField);
+        root.Add(statTypeField);
+       
         root.Add(increaseAmountField);
         root.Add(increaseTypeField);
-        root.Add(statTypeField);
-        root.Add(upgradeTypeField);
+
         root.Add(dependancyField);
         root.Add(createButton);
         root.Add(statusLabel);
@@ -82,7 +85,8 @@ public class UpgradeEditor : EditorWindow
         root.Add(maxCoolDownField);
       
     }
-    private void Update()
+    
+    private void OnGUI()
     {
         statTypeField.visible = (UpgradeType)upgradeTypeField.value == UpgradeType.statChange;
 
@@ -108,12 +112,7 @@ public class UpgradeEditor : EditorWindow
 
     void CreateAsset()
     {
-        if (dependancyField.value != null)
-            if (dependancyField.value.GetType() != typeof(SO_UpgradeData))
-            {
-                statusLabel.text = "Dependancy field must be empty or contain Upgrade data";
-                return;
-            }
+        
         
         
         if (string.IsNullOrWhiteSpace(nameField.value))

@@ -12,7 +12,6 @@ public class EnemyEditor : EditorWindow
     const string ResourcesPath = "Assets/Resources/Enemies";
 
     TextField nameField;
-    TextField descriptionField;
     IntegerField maxHpField;
     Label statusLabel;
     EnumField typeField;
@@ -34,10 +33,12 @@ public class EnemyEditor : EditorWindow
         window.titleContent = new GUIContent("Enemy Creator");
         window.minSize = new Vector2(320, 220);
     }
-    
+    VisualElement bonusProperties;
+
 
     void CreateGUI()
     {
+        bonusProperties=new VisualElement();
         var root = rootVisualElement;
         root.style.paddingLeft = root.style.paddingRight = 8;
         root.style.paddingTop = 8;
@@ -51,6 +52,7 @@ public class EnemyEditor : EditorWindow
     
         maxHpField = new IntegerField("MaxHp");
         spriteField = new ObjectField("Sprite");
+        spriteField.objectType=typeof(Sprite);
         typeField = new EnumField("Enemy Type", EnemyType.Chasing);
         shotSpeedField = new FloatField("Bullet Speed");
         bulletGradientField = new GradientField("Enemy Bullet Color");
@@ -60,8 +62,8 @@ public class EnemyEditor : EditorWindow
         startLevelField = new IntegerField("Level enemy starts spawning at");
         endLevelField = new IntegerField("Level enemy stops spawning at");
         orbitSpeedField = new FloatField("Enemy orbit speed");
-        
 
+       
 
         var createButton = new Button(CreateAsset) { text = "Create" };
         createButton.style.marginTop = 8;
@@ -70,6 +72,7 @@ public class EnemyEditor : EditorWindow
         statusLabel.style.marginTop = 6;
         statusLabel.style.whiteSpace = WhiteSpace.Normal;
 
+        typeField.RegisterValueChangedCallback(type => OnTypeChanged());
         root.Add(nameField);
        
         root.Add(maxHpField);
@@ -77,29 +80,39 @@ public class EnemyEditor : EditorWindow
         root.Add(expField);
         root.Add(speedField);
         root.Add(typeField);
-        root.Add(distanceField);
-        root.Add(shotSpeedField);
-        root.Add(bulletGradientField);
-        root.Add(orbitSpeedField);
+        root.Add(bonusProperties);
         root.Add(startLevelField);
         root.Add(endLevelField);
         root.Add(createButton);
         root.Add(statusLabel);
       
     }
-    private void Update()
+    void OnTypeChanged()
     {
-        shotSpeedField.visible = (EnemyType)typeField.value == EnemyType.Shooting;
-        distanceField.visible = (EnemyType)typeField.value == EnemyType.Shooting;
-        bulletGradientField.visible=(EnemyType)typeField.value==EnemyType.Shooting;
-        orbitSpeedField.visible= (EnemyType)typeField.value == EnemyType.Orbiting;
+        bonusProperties.Clear();
+        switch ((EnemyType)typeField.value)
+        {
+            case EnemyType.Shooting:
+                Debug.Log("Hso");
+                bonusProperties.Add(shotSpeedField);
+                bonusProperties.Add(bulletGradientField);
+                bonusProperties.Add(distanceField);
+                break;
+            case EnemyType.Orbiting:
+                bonusProperties.Add(orbitSpeedField);
+                break;
+            default: 
+                break;
+        }
     }
+    
+ 
 
     void CreateAsset()
     {
-        if (spriteField.value.GetType() != typeof(Sprite)||spriteField.value==null)
+        if (spriteField.value==null)
         {
-            statusLabel.text = "Invalid Sprite Field";
+            statusLabel.text = "Sprite is required";
             return;
         }
         if (string.IsNullOrWhiteSpace(nameField.value))

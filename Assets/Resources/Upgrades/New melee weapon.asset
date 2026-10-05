@@ -18,6 +18,7 @@ MonoBehaviour:
   increaseAmount: 0
   upgradeText: New melee weapon
   dependancy: {fileID: 0}
+  upgradeLevel: 1
   minWeaponCooldown: 0.6
   maxWeaponCooldown: 1.2
   minWeaponAttack: 3

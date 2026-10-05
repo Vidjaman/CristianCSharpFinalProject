@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d85f36be703ec4d4bbc3fd3abf1442bc, type: 3}
-  m_Name: New Ranged Weapon
+  m_Name: StrengthUp 1
   m_EditorClassIdentifier: Assembly-CSharp::SO_UpgradeData
-  upgradeType: 1
+  upgradeType: 0
   statType: 0
   increaseType: 0
-  increaseAmount: 0
-  upgradeText: New Ranged Weapon
+  increaseAmount: 50
+  upgradeText: Strength up
   dependancy: {fileID: 0}
-  upgradeLevel: 1
-  minWeaponCooldown: 0.3
-  maxWeaponCooldown: 1.3
-  minWeaponAttack: 2
-  maxWeaponAttack: 5
-  minWeaponSpeed: 5
-  maxWeaponSpeed: 9
-  minWeaponRadius: 12
-  maxWeaponRadius: 18
+  upgradeLevel: 2
+  minWeaponCooldown: 0
+  maxWeaponCooldown: 0
+  minWeaponAttack: 0
+  maxWeaponAttack: 0
+  minWeaponSpeed: 0
+  maxWeaponSpeed: 0
+  minWeaponRadius: 0
+  maxWeaponRadius: 0

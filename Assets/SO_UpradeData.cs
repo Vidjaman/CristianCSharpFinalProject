@@ -14,6 +14,7 @@ public class SO_UpgradeData : ScriptableObject
 
     public SO_UpgradeData dependancy;
 
+    public int upgradeLevel;
     public float minWeaponCooldown;
     public float maxWeaponCooldown;
     public float minWeaponAttack;

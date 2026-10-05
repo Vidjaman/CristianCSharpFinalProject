@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -29,8 +30,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] TextMeshProUGUI comboText;
 
-
-
+    [SerializeField] int maxLevel;
     [SerializeField] float Score;
     int Combo;
     float comboTimer;
@@ -44,7 +44,8 @@ public class PlayerStats : MonoBehaviour
         Combo++;
         Score += baseScoreGain * Combo;
         comboTimer = maxComboTimer;
-        XP += expYield;
+        if(Level<maxLevel) 
+            XP += expYield;
         UpdateScoreText();
         
     }
@@ -66,6 +67,7 @@ public class PlayerStats : MonoBehaviour
         set { EXP = value;
             levelSlider.value = EXP / XPUntillNextLevel;
             if (EXP >= XPUntillNextLevel) LevelUp();
+            if (Level >= maxLevel) levelSlider.value = 1;
         }
     }
     void LevelUp()
@@ -77,10 +79,13 @@ public class PlayerStats : MonoBehaviour
         IncreaseStat(StatType.Strength, 10);
         IncreaseStat(StatType.Defence, 10);
         IncreaseStat(StatType.Speed, 10);
-        GameManager.Instance.spawnDelay *= 0.93f;
+        GameManager.Instance.spawnDelay *= 0.9f;
         GameManager.Instance.AddRemoveEnemies(Level);
         levelSlider.value = 2;
-        levelText.text = "Level " + Level;
+        if (Level == maxLevel)
+            levelText.text = "MAX LEVEL";
+        else
+            levelText.text = "Level " + Level;
 
 
     }
