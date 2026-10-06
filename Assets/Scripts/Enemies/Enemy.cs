@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     public float expYield;
     [SerializeField] GameObject explosionPrefab;
     protected Vector3 targetPosition;
+    [SerializeField] AudioClip deathClip;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public virtual void Start()
@@ -39,7 +40,9 @@ public class Enemy : MonoBehaviour
         GameManager.Instance.SpawnText((textDamage).ToString(), Color.red, transform.position);
         if (Health <= 0)
         {
+            AudioManager.Instance.PlayClip(deathClip, transform.position, 0.4f);
             Destroy(gameObject);
+            
             Player.GetComponent<PlayerStats>().OnEnemyDeath(expYield);
         }
 

@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85f36be703ec4d4bbc3fd3abf1442bc, type: 3}
   m_Name: Heal
   m_EditorClassIdentifier: Assembly-CSharp::SO_UpgradeData
-  upgradeType: 6
+  upgradeType: 1
+  upgradeText: Heal 10
+  dependancy: {fileID: 0}
+  upgradeLevel: 2
   statType: 1
   increaseType: 0
   increaseAmount: 10
-  upgradeText: Heal
-  dependancy: {fileID: 0}
-  upgradeLevel: 1
   minWeaponCooldown: 0
   maxWeaponCooldown: 0
   minWeaponAttack: 0

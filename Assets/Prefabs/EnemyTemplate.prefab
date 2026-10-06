@@ -233,6 +233,7 @@ MonoBehaviour:
   enemyStats: {fileID: 0}
   expYield: 20
   explosionPrefab: {fileID: 5268167439415494675, guid: 3932aa8cd7dfea744a30120e5e64f2ad, type: 3}
+  deathClip: {fileID: 8300000, guid: 407e5c006b686b24ea431eb961762f4d, type: 3}
 --- !u!61 &7489215066978807043
 BoxCollider2D:
   m_ObjectHideFlags: 0

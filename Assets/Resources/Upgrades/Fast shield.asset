@@ -10,20 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d85f36be703ec4d4bbc3fd3abf1442bc, type: 3}
-  m_Name: StrengthUp 1
+  m_Name: Fast shield
   m_EditorClassIdentifier: Assembly-CSharp::SO_UpgradeData
-  upgradeType: 0
+  upgradeType: 4
+  upgradeText: Fast shield
+  minLevel: 15
+  dependancy: {fileID: 0}
+  upgradeLevel: 4
   statType: 0
   increaseType: 0
-  increaseAmount: 50
-  upgradeText: Strength up
-  dependancy: {fileID: 0}
-  upgradeLevel: 2
+  increaseAmount: 0
   minWeaponCooldown: 0
   maxWeaponCooldown: 0
-  minWeaponAttack: 0
-  maxWeaponAttack: 0
-  minWeaponSpeed: 0
-  maxWeaponSpeed: 0
-  minWeaponRadius: 0
-  maxWeaponRadius: 0
+  minWeaponAttack: 4
+  maxWeaponAttack: 7
+  minWeaponSpeed: 17
+  maxWeaponSpeed: 25
+  minWeaponRadius: 3
+  maxWeaponRadius: 4

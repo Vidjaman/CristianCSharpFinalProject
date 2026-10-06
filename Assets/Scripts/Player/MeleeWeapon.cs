@@ -4,6 +4,7 @@ public class MeleeWeapon : Weapon
 {
     Animator animator;
     SpriteRenderer sr;
+    [SerializeField] AudioClip slashClip;
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -13,6 +14,7 @@ public class MeleeWeapon : Weapon
     }
     public override void Attack()
     {
+        //AudioManager.Instance.PlayClip(slashClip, transform.position,0.2f,Random.Range(0.9f,1.1f));
         base.Attack();
         animator.Play("Attack");
     }

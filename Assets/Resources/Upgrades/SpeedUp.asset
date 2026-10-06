@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: SpeedUp
   m_EditorClassIdentifier: Assembly-CSharp::SO_UpgradeData
   upgradeType: 0
+  upgradeText: Speed Up
+  dependancy: {fileID: 0}
+  upgradeLevel: 2
   statType: 1
   increaseType: 0
   increaseAmount: 50
-  upgradeText: Speed Up
-  dependancy: {fileID: 0}
-  upgradeLevel: 1
   minWeaponCooldown: 0
   maxWeaponCooldown: 0
   minWeaponAttack: 0

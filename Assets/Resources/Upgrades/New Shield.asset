@@ -12,18 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85f36be703ec4d4bbc3fd3abf1442bc, type: 3}
   m_Name: New Shield
   m_EditorClassIdentifier: Assembly-CSharp::SO_UpgradeData
-  upgradeType: 5
+  upgradeType: 4
+  upgradeText: New Shield
+  minLevel: 2
+  dependancy: {fileID: 0}
+  upgradeLevel: 2
   statType: 0
   increaseType: 0
   increaseAmount: 0
-  upgradeText: New Shield
-  dependancy: {fileID: 0}
-  upgradeLevel: 1
   minWeaponCooldown: 0
   maxWeaponCooldown: 0
   minWeaponAttack: 4
-  maxWeaponAttack: 7
+  maxWeaponAttack: 5
   minWeaponSpeed: 6
   maxWeaponSpeed: 16
-  minWeaponRadius: 3
+  minWeaponRadius: 4
   maxWeaponRadius: 9

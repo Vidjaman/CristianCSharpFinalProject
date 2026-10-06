@@ -4,16 +4,14 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.Mathematics;
 using Unity.VisualScripting;
+using UnityEditor.Rendering.Universal.ShaderGraph;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-[Serializable] public struct EnemySpawnConditions
-{
-    public int minLevel;
-    public int maxLevel;
-    public GameObject prefab;
-}
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
@@ -21,7 +19,7 @@ public class GameManager : MonoBehaviour
     public SO_Enemy[] enemyList;
     [SerializeField] GameObject textPrefab;
     public float spawnDelay=1;
-
+    public GameObject unPauseButton;
     [SerializeField] RangedEnemy rangedEnemyTemplate;
     [SerializeField] Enemy normalEnemyTemplate;
     [SerializeField] OrbitEnemy orbitEnemyTemplate;
@@ -34,6 +32,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] float spawnRadius;
     [SerializeField] InputActionReference pause;
 
+    
+    public float timer;
+    [SerializeField] float startTimer;
     float _HighScore;
     public float GetHighScore()
     {
@@ -42,6 +43,19 @@ public class GameManager : MonoBehaviour
             _HighScore = PlayerPrefs.GetFloat("HighScore");
         }
         return _HighScore;
+    }
+    public Animator winAnimator;
+    bool won = false;
+    public void Win()
+    {
+        won = true;
+
+        if (isPaused) UnPause();
+        Time.timeScale = 0;
+       
+        
+        winAnimator.Play("Win");
+        
     }
     bool isPaused = false;
     
@@ -73,14 +87,28 @@ public class GameManager : MonoBehaviour
     }
     public void Pause()
     {
+        if (won)
+            return;
+        EventSystem.current.SetSelectedGameObject(unPauseButton);
         isPaused = true;
         pauseAnimator.Play("Pause");
         Time.timeScale = 0;
     }
+    private void Update()
+    {
+        if (won)
+            return;
+        timer -= Time.deltaTime;
+        if (timer < 0)
+        {
+            Win();
+        }
+    }
     public void UnPause()
     {
         isPaused = false;
-        Time.timeScale = 1;
+        if(!won)
+            Time.timeScale = 1;
         pauseAnimator.Play("UnPause");
     }
     public void SetHighScore(float score)
@@ -157,6 +185,8 @@ public class GameManager : MonoBehaviour
         AddRemoveEnemies(1);
         isPaused = false;
         Time.timeScale = 1;
+        timer = startTimer;
+        won = false;
         player = GameObject.FindWithTag("Player");
         StartCoroutine(SpawnEnemy());
         pause.action.Enable();

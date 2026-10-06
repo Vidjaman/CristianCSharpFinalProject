@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85f36be703ec4d4bbc3fd3abf1442bc, type: 3}
   m_Name: New Ranged Weapon
   m_EditorClassIdentifier: Assembly-CSharp::SO_UpgradeData
-  upgradeType: 1
+  upgradeType: 3
+  upgradeText: New Ranged Weapon
+  minLevel: 3
+  dependancy: {fileID: 0}
+  upgradeLevel: 2
   statType: 0
   increaseType: 0
   increaseAmount: 0
-  upgradeText: New Ranged Weapon
-  dependancy: {fileID: 0}
-  upgradeLevel: 1
-  minWeaponCooldown: 0.3
+  minWeaponCooldown: 0.6
   maxWeaponCooldown: 1.3
   minWeaponAttack: 2
   maxWeaponAttack: 5

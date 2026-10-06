@@ -2,21 +2,23 @@ using Mono.Cecil;
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public enum UpgradeType
 {
     statChange,
-
-    newRangedWeapon,
-
-    reduceCoolDownMelee,
+    heal,
     newMeleeWeapon,
-
+    newRangedWeapon,
+    newShieldWeapon,
+    meleeWeaponSizeUp,
+    reduceCoolDownMelee,
     reduceCoolDownRanged,
 
-    newShieldWeapon,
-    heal,
-    meleeWeaponSizeUp,
+
+
+   
+   
    
     
    
@@ -58,6 +60,14 @@ public class Upgrade
         
     }
 }
+public enum Rarity
+{
+    COMMON = 1,
+    UNCOMMON = 2,
+    RARE = 3,
+    EPIC=4,
+    LEGENDARY = 5
+}
 public class LevelUpRandomizer : MonoBehaviour
 {
     GameObject player;
@@ -67,22 +77,34 @@ public class LevelUpRandomizer : MonoBehaviour
     [SerializeField] public GameObject rangedWeaponTemplate;
     public GameObject shieldTemplate;
 
+    List<SO_UpgradeData> upgradeList=new List<SO_UpgradeData>();
+    void SetUpgradeList()
+    {
+        upgradeList.Clear();
+        foreach(SO_UpgradeData u in Resources.LoadAll<SO_UpgradeData>("Upgrades"))
+        {
+            if (u.minLevel <= player.GetComponent<PlayerStats>().Level)
+            {
+                upgradeList.Add(u);
+            }
+        }
+    }
     
     SO_UpgradeData RandomWeighted()
     {
-        SO_UpgradeData[] upgradeList = Resources.LoadAll<SO_UpgradeData>("Upgrades");
+        
         float totalWeight = 0;
         foreach(SO_UpgradeData upgrade in upgradeList)
         {
-            totalWeight += 1 / upgrade.upgradeLevel;
+            totalWeight += 1f / (int)upgrade.upgradeLevel;
         }
-        float randomWeight=Random.Range(0, totalWeight);
+        float randomWeight=Random.Range(0f, totalWeight);
 
         SO_UpgradeData selectedUpgrade=upgradeList[0];
         float cumulativeWeight = 0;
         foreach (SO_UpgradeData upgrade in upgradeList)
         {
-            cumulativeWeight += 1 / upgrade.upgradeLevel;
+            cumulativeWeight += 1f / (int)upgrade.upgradeLevel;
             if (randomWeight <= cumulativeWeight)
             {
                 selectedUpgrade = upgrade;
@@ -93,20 +115,26 @@ public class LevelUpRandomizer : MonoBehaviour
         return selectedUpgrade;
 
     }
+    [SerializeField] GameObject unPauseButton;
+    public void SetUnPauseSelected()
+    {
+        EventSystem.current.SetSelectedGameObject(unPauseButton);
+    }
     private void Start()
     {
         animator = GetComponent<Animator>();
         player = GameManager.Instance.player;
-        GameManager.Instance.pauseAnimator=animator;
+        GameManager.Instance.pauseAnimator = animator;
     }
     public List<SO_UpgradeData> acquiredUpgrades=new List<SO_UpgradeData>();
     public void OnLevelUp()
     {
+        SetUpgradeList();
         Time.timeScale = 0;
         animator.Play("LevelUp");
         List<SO_UpgradeData> exclusions = new List<SO_UpgradeData>();
-        SO_UpgradeData[] upgradeList= Resources.LoadAll<SO_UpgradeData>("Upgrades");
-        
+       
+        EventSystem.current.SetSelectedGameObject(buttons[0].gameObject);
         foreach (LevelUpButton b in buttons)
         {
             bool acceptable = false;

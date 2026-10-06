@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: StrengthUp
   m_EditorClassIdentifier: Assembly-CSharp::SO_UpgradeData
   upgradeType: 0
+  upgradeText: Strength up
+  dependancy: {fileID: 0}
+  upgradeLevel: 2
   statType: 0
   increaseType: 0
   increaseAmount: 50
-  upgradeText: Strength up
-  dependancy: {fileID: 0}
-  upgradeLevel: 1
   minWeaponCooldown: 0
   maxWeaponCooldown: 0
   minWeaponAttack: 0

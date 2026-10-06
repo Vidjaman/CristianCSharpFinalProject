@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85f36be703ec4d4bbc3fd3abf1442bc, type: 3}
   m_Name: Melee Weapon Size Up
   m_EditorClassIdentifier: Assembly-CSharp::SO_UpgradeData
-  upgradeType: 7
+  upgradeType: 5
+  upgradeText: Melee Weapon Size Up
+  minLevel: 5
+  dependancy: {fileID: 0}
+  upgradeLevel: 3
   statType: 0
   increaseType: 1
-  increaseAmount: 1.65
-  upgradeText: Melee Weapon Size Up
-  dependancy: {fileID: 0}
-  upgradeLevel: 1
+  increaseAmount: 1.4
   minWeaponCooldown: 0
   maxWeaponCooldown: 0
   minWeaponAttack: 0

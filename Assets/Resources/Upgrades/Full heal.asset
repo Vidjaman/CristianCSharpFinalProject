@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85f36be703ec4d4bbc3fd3abf1442bc, type: 3}
+  m_Name: Full heal
+  m_EditorClassIdentifier: Assembly-CSharp::SO_UpgradeData
+  upgradeType: 1
+  upgradeText: Full heal
+  minLevel: 20
+  dependancy: {fileID: 0}
+  upgradeLevel: 5
+  statType: 1
+  increaseType: 0
+  increaseAmount: 100
+  minWeaponCooldown: 0
+  maxWeaponCooldown: 0
+  minWeaponAttack: 0
+  maxWeaponAttack: 0
+  minWeaponSpeed: 0
+  maxWeaponSpeed: 0
+  minWeaponRadius: 0
+  maxWeaponRadius: 0

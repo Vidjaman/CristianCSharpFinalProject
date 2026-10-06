@@ -26,7 +26,7 @@ public class EnemyEditor : EditorWindow
     IntegerField endLevelField;
     GradientField bulletGradientField;
     FloatField orbitSpeedField;
-    [MenuItem("FutureGames/Enemy Creator")]
+    [MenuItem("Tools/Enemy Creator")]
     static void Open()
     {
         var window = GetWindow<EnemyEditor>();

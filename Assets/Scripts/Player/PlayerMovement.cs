@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -37,6 +38,23 @@ public class PlayerMovement : MonoBehaviour
         moveValue=Move.action.ReadValue<Vector2>();
         if (moveValue.x != 0&&Time.timeScale!=0) direction = Math.Sign(moveValue.x);
         transform.position += (Vector3)moveValue * speed * Time.deltaTime;
+        if (transform.position.x > 425)
+        {
+            transform.position = new Vector3(425, transform.position.y, transform.position.z);
+        }
+        if (transform.position.x < -425)
+        {
+            transform.position = new Vector3(-425, transform.position.y, transform.position.z);
+        }
+        if (transform.position.y > 425)
+        {
+            transform.position = new Vector3(transform.position.x, 425, transform.position.z);
+        }
+        if (transform.position.y < -425)
+        {
+            transform.position = new Vector3(transform.position.x, -425, transform.position.z);
+        }
+       
         if (direction == 1)
         {
             transform.eulerAngles = new Vector3(0, 0, 0);

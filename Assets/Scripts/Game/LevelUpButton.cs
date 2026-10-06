@@ -11,60 +11,24 @@ public class LevelUpButton : MonoBehaviour
     {
         playerStats = GameManager.Instance.player.GetComponent<PlayerStats>();
     }
-
+    [SerializeField] GameObject[] stars;
     // Update is called once per frame
-    void Update()
-    {
-        
+    void SetRarityStars(SO_UpgradeData data)
+    { 
+        foreach (GameObject star in stars)
+        {
+            star.SetActive(false);
+        }
+        for (int i = 0; i<(int)data.upgradeLevel; i++)
+        {
+            stars[i].SetActive(true);
+        }
     }
     public void SetText()
     {
         text.text = upgradeToGive.data.upgradeText;
-        /*if (upgradeToGive.data.upgradeType == UpgradeType.statChange)
-        {
-            text.text = "Stat Upgrade";
-            switch (upgradeToGive.data.statType)
-            {
-                case StatType.Strength:
-                    text.text += "\nStrength";
-                    break;
-                case StatType.Speed:
-                    text.text += "\nSpeed";
-                    break;
-                case StatType.Defence:
-                    text.text += "\nDefence";
-                    break;
-            }
-            
-        }
-        if (upgradeToGive.data.upgradeType == UpgradeType.newRangedWeapon)
-        {
-            text.text = "New Ranged Weapon";
-        }
-        if (upgradeToGive.data.upgradeType == UpgradeType.reduceCoolDownMelee)
-        {
-            text.text = "Reduce Melee\nWeapon Cooldowns";
-        }
-        if (upgradeToGive.data.upgradeType == UpgradeType.newMeleeWeapon)
-        {
-            text.text = "New Melee Weapon";
-        }
-        if (upgradeToGive.data.upgradeType == UpgradeType.reduceCoolDownRanged)
-        {
-            text.text = "Reduce Ranged\nWeapon Cooldowns";
-        }
-        if (upgradeToGive.data.upgradeType == UpgradeType.newShieldWeapon)
-        {
-            text.text = "New Shield";
-        }
-        if (upgradeToGive.data.upgradeType == UpgradeType.heal)
-        {
-            text.text = "Heal";
-        }
-        if (upgradeToGive.data.upgradeType == UpgradeType.meleeWeaponSizeUp)
-        {
-            text.text = "Increase Melee\nWeapon size";
-        }*/
+        SetRarityStars(upgradeToGive.data);
+        
     }
     PlayerStats playerStats;
     public Upgrade upgradeToGive;
@@ -88,12 +52,17 @@ public class LevelUpButton : MonoBehaviour
                 {
                     if (upgradeToGive.data.increaseType == IncreaseType.ADDITIVE)
                     {
-                        m.coolDown -= upgradeToGive.data.increaseAmount;
+                      
+                            m.coolDown -= upgradeToGive.data.increaseAmount;
+                        
+                        
                     }
                     else
                     {
                         m.coolDown *= upgradeToGive.data.increaseAmount;
                     }
+                    if (m.coolDown <= 0.1f) 
+                        m.coolDown = 0.1f;
                 }
 
                 break;
@@ -110,6 +79,7 @@ public class LevelUpButton : MonoBehaviour
                     if (upgradeToGive.data.increaseType == IncreaseType.ADDITIVE)
                     {
                         m.coolDown -= upgradeToGive.data.increaseAmount;
+                        if (m.coolDown < 0) m.coolDown = 0;
                     }
                     else
                     {
@@ -140,9 +110,9 @@ public class LevelUpButton : MonoBehaviour
                     {
                         m.transform.localScale += Vector3.one*upgradeToGive.data.increaseAmount;
                     }
-                    if (m.transform.localScale.x > 6)
+                    if (m.transform.localScale.x > 4)
                     {
-                        m.transform.localScale = Vector3.one * 6;
+                        m.transform.localScale = Vector3.one * 4;
                     }
                     
                 }

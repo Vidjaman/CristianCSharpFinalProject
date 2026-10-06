@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85f36be703ec4d4bbc3fd3abf1442bc, type: 3}
   m_Name: Reduce Ranged Weapon Cooldowns
   m_EditorClassIdentifier: Assembly-CSharp::SO_UpgradeData
-  upgradeType: 4
+  upgradeType: 7
   statType: 1
   increaseType: 1
   increaseAmount: 0.8

@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85f36be703ec4d4bbc3fd3abf1442bc, type: 3}
   m_Name: New melee weapon
   m_EditorClassIdentifier: Assembly-CSharp::SO_UpgradeData
-  upgradeType: 3
-  statType: 0
-  increaseType: 0
-  increaseAmount: 0
+  upgradeType: 2
   upgradeText: New melee weapon
   dependancy: {fileID: 0}
   upgradeLevel: 1
-  minWeaponCooldown: 0.6
-  maxWeaponCooldown: 1.2
-  minWeaponAttack: 3
-  maxWeaponAttack: 7
+  statType: 0
+  increaseType: 0
+  increaseAmount: 0
+  minWeaponCooldown: 0.9
+  maxWeaponCooldown: 1.5
+  minWeaponAttack: 2
+  maxWeaponAttack: 5
   minWeaponSpeed: 0
   maxWeaponSpeed: 0
   minWeaponRadius: 0

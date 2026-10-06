@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85f36be703ec4d4bbc3fd3abf1442bc, type: 3}
+  m_Name: New melee weapon+
+  m_EditorClassIdentifier: Assembly-CSharp::SO_UpgradeData
+  upgradeType: 2
+  upgradeText: New melee weapon+
+  minLevel: 9
+  dependancy: {fileID: 0}
+  upgradeLevel: 2
+  statType: 0
+  increaseType: 0
+  increaseAmount: 0
+  minWeaponCooldown: 0.5
+  maxWeaponCooldown: 1
+  minWeaponAttack: 6
+  maxWeaponAttack: 9
+  minWeaponSpeed: 0
+  maxWeaponSpeed: 0
+  minWeaponRadius: 0
+  maxWeaponRadius: 0

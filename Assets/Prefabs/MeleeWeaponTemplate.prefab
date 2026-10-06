@@ -53,6 +53,7 @@ MonoBehaviour:
   baseDamage: 5
   realDamage: 0
   weaponData: {fileID: 11400000, guid: 07aa4d59b20b8624b82505e860738811, type: 2}
+  slashClip: {fileID: 8300000, guid: d8cfd4ddbeba7f948b725f67ec580cfb, type: 3}
 --- !u!95 &753975321331169615
 Animator:
   serializedVersion: 7

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85f36be703ec4d4bbc3fd3abf1442bc, type: 3}
   m_Name: Reduce MeleenWeapon Cooldowns
   m_EditorClassIdentifier: Assembly-CSharp::SO_UpgradeData
-  upgradeType: 2
+  upgradeType: 6
   statType: 1
   increaseType: 1
   increaseAmount: 0.8
