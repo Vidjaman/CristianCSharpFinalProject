@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: New Ranged Weapon
   m_EditorClassIdentifier: Assembly-CSharp::SO_UpgradeData
   upgradeType: 3
+  soundClip: {fileID: 0}
   upgradeText: New Ranged Weapon
   minLevel: 3
   dependancy: {fileID: 0}
@@ -28,3 +29,4 @@ MonoBehaviour:
   maxWeaponSpeed: 9
   minWeaponRadius: 12
   maxWeaponRadius: 18
+  rangeWeaponPierce: 0

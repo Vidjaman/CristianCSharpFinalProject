@@ -18,10 +18,10 @@ MonoBehaviour:
   enemyType: 1
   Speed: 13
   expYield: 45
-  shotSpeed: 20
-  distanceToKeep: 8
   startLevel: 9
   endLevel: 0
+  shotSpeed: 20
+  distanceToKeep: 8
   bulletColorGradient:
     serializedVersion: 2
     key0: {r: 1, g: 0.23113209, b: 0.7992788, a: 1}
@@ -52,3 +52,4 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
+  orbitSpeed: 0

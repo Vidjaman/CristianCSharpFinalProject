@@ -18,10 +18,10 @@ MonoBehaviour:
   enemyType: 0
   Speed: 18
   expYield: 70
+  startLevel: 16
+  endLevel: 50
   shotSpeed: 0
   distanceToKeep: 0
-  startLevel: 16
-  endLevel: 0
   bulletColorGradient:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}

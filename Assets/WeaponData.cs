@@ -6,6 +6,7 @@ public class WeaponData : ScriptableObject
     public float coolDown;
     public float baseDamage;
     public float speed;
+    public bool rangePierce;
 
     public float radius;
     public WeaponData()

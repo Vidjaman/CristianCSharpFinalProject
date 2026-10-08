@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: Full heal
   m_EditorClassIdentifier: Assembly-CSharp::SO_UpgradeData
   upgradeType: 1
-  upgradeText: Full heal
+  soundClip: {fileID: 8300000, guid: 2397020db1729354c87c46cd4b9c51f7, type: 3}
+  upgradeText: Heal 50
   minLevel: 20
   dependancy: {fileID: 0}
   upgradeLevel: 5
   statType: 1
   increaseType: 0
-  increaseAmount: 100
+  increaseAmount: 50
   minWeaponCooldown: 0
   maxWeaponCooldown: 0
   minWeaponAttack: 0

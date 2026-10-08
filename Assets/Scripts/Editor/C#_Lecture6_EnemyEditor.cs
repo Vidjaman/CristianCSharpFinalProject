@@ -22,6 +22,7 @@ public class EnemyEditor : EditorWindow
     FloatField speedField;
     FloatField distanceField;
     FloatField expField;
+   
     IntegerField startLevelField;
     IntegerField endLevelField;
     GradientField bulletGradientField;
@@ -49,7 +50,7 @@ public class EnemyEditor : EditorWindow
         });
 
         nameField = new TextField("Item Name");
-    
+        
         maxHpField = new IntegerField("MaxHp");
         spriteField = new ObjectField("Sprite");
         spriteField.objectType=typeof(Sprite);

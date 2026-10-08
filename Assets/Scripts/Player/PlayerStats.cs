@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
@@ -38,11 +39,12 @@ public class PlayerStats : MonoBehaviour
     {
         return Score;
     }
+    public float comboMultiplier;
     public void OnEnemyDeath(float expYield)
     {
        
         Combo++;
-        Score += baseScoreGain * Combo;
+        Score += baseScoreGain * (Combo*comboMultiplier);
         comboTimer = maxComboTimer;
         if(Level<maxLevel) 
             XP += expYield;
@@ -52,7 +54,7 @@ public class PlayerStats : MonoBehaviour
     void UpdateScoreText()
     {
         comboText.text = "Combo: " + Combo;
-        scoreText.text = "Score: " + Score;
+        scoreText.text = "Score: " + Score.ToString("G10");
     }
     public void ResetCombo()
     {
@@ -70,16 +72,20 @@ public class PlayerStats : MonoBehaviour
             if (Level >= maxLevel) levelSlider.value = 1;
         }
     }
+    [SerializeField] AudioClip levelUpSound;
+    int maxLevelToReduceCooldown = 40;
     void LevelUp()
     {
         confetti.Play();
+        AudioManager.Instance.PlayClip(levelUpSound, transform.position, 0.3f,1);
         Level++;
         XPUntillNextLevel = 100 + (10 * Level * Level);
         levelUpManager.OnLevelUp();
         IncreaseStat(StatType.Strength, 10);
         IncreaseStat(StatType.Defence, 10);
         IncreaseStat(StatType.Speed, 10);
-        GameManager.Instance.spawnDelay *= 0.9f;
+        if(Level<=maxLevelToReduceCooldown)
+            GameManager.Instance.spawnDelay *= 0.9f;
         GameManager.Instance.AddRemoveEnemies(Level);
         levelSlider.value = 2;
         if (Level == maxLevel)
@@ -132,6 +138,10 @@ public class PlayerStats : MonoBehaviour
     }
     private void Update()
     {
+        if (Keyboard.current.lKey.wasPressedThisFrame)
+        {
+            LevelUp();
+        }
         if (comboTimer > 0)
         {
             comboTimer -= Time.deltaTime;

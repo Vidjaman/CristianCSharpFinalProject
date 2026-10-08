@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 521427090416830798}
   - component: {fileID: 4639539916191869568}
+  - component: {fileID: 4960105530486478849}
   m_Layer: 0
   m_Name: AudioClip
   m_TagString: Untagged
@@ -129,3 +130,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4960105530486478849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453260891568349629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1eb18ebd3b7174d87015933c9fbff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'

@@ -328,5 +328,6 @@ MonoBehaviour:
   enemyStats: {fileID: 0}
   expYield: 0
   explosionPrefab: {fileID: 5268167439415494675, guid: 3932aa8cd7dfea744a30120e5e64f2ad, type: 3}
-  deathClip: {fileID: 8300000, guid: 407e5c006b686b24ea431eb961762f4d, type: 3}
+  deathClip: {fileID: 8300000, guid: b9d3cf9a41339b544b62e1e46f549bf7, type: 3}
+  hurtClip: {fileID: 8300000, guid: 3722bf236f8cfa14b9eb6a634f4bcac9, type: 3}
   angle: 0

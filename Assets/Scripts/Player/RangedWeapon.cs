@@ -19,6 +19,7 @@ public class RangedWeapon : Weapon
     public Gradient bulletGradient;
     protected override void Start()
     {
+        pierce = weaponData.rangePierce;
         speed = weaponData.speed;
         base.Start();
     }

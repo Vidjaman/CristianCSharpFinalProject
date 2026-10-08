@@ -35,6 +35,10 @@ public class LevelUpButton : MonoBehaviour
     public void GiveUpgrade()
     {
         if (upgradeToGive == null) return;
+        if (upgradeToGive.data.soundClip != null)
+        {
+            AudioManager.Instance.PlayClip(upgradeToGive.data.soundClip, playerStats.transform.position, 1);
+        }
         switch(upgradeToGive.data.upgradeType)
         {
             case UpgradeType.statChange:
@@ -134,6 +138,7 @@ public class LevelUpButton : MonoBehaviour
     {
         RangedWeapon newWeapon= Instantiate(GetComponentInParent<LevelUpRandomizer>().rangedWeaponTemplate, playerStats.transform).GetComponent<RangedWeapon>();
         newWeapon.weaponData = upgradeToGive.newWeaponData;
+        newWeapon.weaponData.rangePierce = upgradeToGive.data.rangeWeaponPierce;
         Color color1 = Random.ColorHSV();
         Color color2 = Random.ColorHSV();
         var colors = new GradientColorKey[2];

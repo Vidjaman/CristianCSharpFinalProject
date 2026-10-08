@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Heal
   m_EditorClassIdentifier: Assembly-CSharp::SO_UpgradeData
   upgradeType: 1
+  soundClip: {fileID: 8300000, guid: 2397020db1729354c87c46cd4b9c51f7, type: 3}
   upgradeText: Heal 10
+  minLevel: 0
   dependancy: {fileID: 0}
   upgradeLevel: 2
   statType: 1

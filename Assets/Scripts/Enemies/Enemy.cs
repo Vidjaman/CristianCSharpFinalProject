@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] GameObject explosionPrefab;
     protected Vector3 targetPosition;
     [SerializeField] AudioClip deathClip;
+    [SerializeField] AudioClip hurtClip;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public virtual void Start()
@@ -40,10 +41,16 @@ public class Enemy : MonoBehaviour
         GameManager.Instance.SpawnText((textDamage).ToString(), Color.red, transform.position);
         if (Health <= 0)
         {
-            AudioManager.Instance.PlayClip(deathClip, transform.position, 0.4f);
+            AudioManager.Instance.PlayClip(deathClip, transform.position, 0.2f,6);
+            GameObject boom = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            boom.transform.localScale = Vector3.one * 0.5f;
             Destroy(gameObject);
             
             Player.GetComponent<PlayerStats>().OnEnemyDeath(expYield);
+        }
+        else
+        {
+            AudioManager.Instance.PlayClip(hurtClip, transform.position,0.2f, 10);
         }
 
       
@@ -59,16 +66,9 @@ public class Enemy : MonoBehaviour
         SetTargetPosition();
         rb.linearVelocity= DirectionTowardsTarget() * speed;
     }
-    bool isQuitting = false;
-    private void OnApplicationQuit()
-    {
-        isQuitting = true;
-    }
+    
     private void OnDestroy()
-    {
-        if (isQuitting) return;
-        GameObject boom = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-        boom.transform.localScale= Vector3.one*0.5f;
+    {   
         GameManager.Instance.enemyCount--;
     }
 }

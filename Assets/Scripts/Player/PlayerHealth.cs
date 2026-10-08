@@ -49,7 +49,7 @@ public class PlayerHealth : MonoBehaviour
         HealthProp -= realDamage;
         InvincibilityTime = 0.3f;
         if(_Health>0) 
-            AudioManager.Instance.PlayClip(hurtClip, transform.position,1 ,Random.Range(0.9f, 1.1f));
+            AudioManager.Instance.PlayClip(hurtClip, transform.position,1 ,Random.Range(0.9f, 1.1f),5);
         GetComponent<PlayerStats>().ResetCombo();
         GameManager.Instance.SpawnText((Mathf.Round(realDamage * 10) / 10).ToString(), Color.yellow, transform.position);
         if (_Health <= 0) Die();
@@ -58,7 +58,8 @@ public class PlayerHealth : MonoBehaviour
     }
     void Die()
     {
-        AudioManager.Instance.PlayClip(bigHurtClip, transform.position);
+        MusicPlayer.Instance.StopMusic();
+        AudioManager.Instance.PlayClip(bigHurtClip, transform.position,1);
         GameManager.Instance.SetHighScore(GetComponent<PlayerStats>().GetScore());
         _Health = 0;
         Time.timeScale = 0;

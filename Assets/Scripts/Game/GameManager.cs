@@ -1,10 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using Unity.Mathematics;
 using Unity.VisualScripting;
-using UnityEditor.Rendering.Universal.ShaderGraph;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -14,6 +14,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    private string filePath;
     public static GameManager Instance;
     public GameObject player;
     public SO_Enemy[] enemyList;
@@ -32,23 +33,28 @@ public class GameManager : MonoBehaviour
     [SerializeField] float spawnRadius;
     [SerializeField] InputActionReference pause;
 
+    [SerializeField] AudioClip mainSong;
+
     
     public float timer;
     [SerializeField] float startTimer;
     float _HighScore;
     public float GetHighScore()
     {
-        if (PlayerPrefs.HasKey("HighScore"))
+        if (File.Exists(filePath))
         {
-            _HighScore = PlayerPrefs.GetFloat("HighScore");
+            LoadScore();
         }
         return _HighScore;
     }
     public Animator winAnimator;
     bool won = false;
+    [SerializeField] AudioClip winSong;
     public void Win()
     {
         won = true;
+        MusicPlayer.Instance.PlayMusic(winSong,true,0.5f);
+        SetHighScore(player.GetComponent<PlayerStats>().GetScore());
 
         if (isPaused) UnPause();
         Time.timeScale = 0;
@@ -85,9 +91,21 @@ public class GameManager : MonoBehaviour
             Pause();
         }
     }
+    SaveData saveData;
+    public void LoadScore()
+    {
+        var saveGame = JsonUtility.FromJson<SaveData>(File.ReadAllText(filePath));
+        _HighScore = saveGame.highScore;
+        
+    }
+    public void SaveScore()
+    {
+        var saveGame = JsonUtility.ToJson(saveData);
+        File.WriteAllText(filePath, saveGame);
+    }
     public void Pause()
     {
-        if (won)
+        if (won||Time.timeScale!=1)
             return;
         EventSystem.current.SetSelectedGameObject(unPauseButton);
         isPaused = true;
@@ -96,7 +114,7 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if (won)
+        if (won||!started)
             return;
         timer -= Time.deltaTime;
         if (timer < 0)
@@ -115,7 +133,8 @@ public class GameManager : MonoBehaviour
     {
         if(score> _HighScore) _HighScore = score;
 
-        PlayerPrefs.SetFloat("HighScore", score);
+        saveData.highScore = _HighScore;
+        SaveScore();
     }
     IEnumerator SpawnEnemy()
     {
@@ -148,7 +167,7 @@ public class GameManager : MonoBehaviour
         
         foreach(SO_Enemy e in enemyList)
         {
-            if (level >= e.startLevel && (level <= e.endLevel ||e.endLevel==0))
+            if (level >= e.startLevel && (level < e.endLevel ||e.endLevel==0))
             {
                 if(!spawnAbleEnemies.Contains(e)) spawnAbleEnemies.Add(e);
             } 
@@ -165,26 +184,34 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
        
+        filePath= Application.persistentDataPath + "/saveGame.json";
         if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(this);
         }
-        else Destroy(gameObject);
+        else 
+        {
+            Instance.started = false;
+            Destroy(gameObject);
+            Instance.StopAllCoroutines();
+        }
         
         
     }
-
+    bool started;
     public void StartGame() 
     {
         StopAllCoroutines();
         if (SceneManager.GetActiveScene().name != "MainGame" ) 
             return;
+        started = true;
         enemyList = Resources.LoadAll<SO_Enemy>("Enemies");
         spawnDelay = 1;
         AddRemoveEnemies(1);
         isPaused = false;
         Time.timeScale = 1;
+        MusicPlayer.Instance.PlayMusic(mainSong, true,0.2f);
         timer = startTimer;
         won = false;
         player = GameObject.FindWithTag("Player");
@@ -198,4 +225,8 @@ public class GameManager : MonoBehaviour
     {
         Gizmos.DrawWireSphere(transform.position,spawnRadius);
     }
+}
+struct SaveData
+{
+    public float highScore;
 }

@@ -5,7 +5,7 @@ public class SO_UpgradeData : ScriptableObject
 {
     [Header("Base properties")]
     public UpgradeType upgradeType;
-
+    public AudioClip soundClip;
     public string upgradeText;
 
     public int minLevel;
@@ -30,5 +30,7 @@ public class SO_UpgradeData : ScriptableObject
     public float maxWeaponSpeed;
     public float minWeaponRadius;
     public float maxWeaponRadius;
+
+    public bool rangeWeaponPierce;
 
 }

@@ -22,11 +22,14 @@ public class UpgradeEditor : EditorWindow
     EnumField increaseTypeField;
     IntegerField minLevelField;
     Label statusLabel;
+    Toggle pierceToggle;
 
 
     FloatField minAttackField;
     FloatField maxAttackField;
     FloatField minCoolDownField;
+
+    ObjectField soundField;
     FloatField maxCoolDownField;
     FloatField maxSpeedField;
     FloatField minSpeedField;
@@ -62,7 +65,11 @@ public class UpgradeEditor : EditorWindow
         dependancyField = new ObjectField("Require other upgrade?");
         dependancyField.objectType= typeof(SO_UpgradeData);
 
+        soundField = new ObjectField("Sound Effect (optional)");
+        soundField.objectType = typeof(AudioClip);
+
         minLevelField = new IntegerField("Minimum level requirement");
+        
 
         rarityField = new EnumField("Rarity", Rarity.COMMON) ;
 
@@ -75,6 +82,7 @@ public class UpgradeEditor : EditorWindow
         maxSpeedField = new FloatField("New Weapon Max Speed");
         minRadiusField = new FloatField("New Weapon Min Radius");
         maxRadiusField = new FloatField("New Weapon Max Radius");
+        pierceToggle = new Toggle("Pierce enemies?");
         var createButton = new Button(CreateAsset) { text = "Create" };
         createButton.style.marginTop = 8;
 
@@ -84,8 +92,10 @@ public class UpgradeEditor : EditorWindow
 
         root.Add(nameField);
         root.Add(rarityField);
-        root.Add(upgradeTypeField);
+        root.Add(soundField);
+        
         root.Add(minLevelField);
+        root.Add(upgradeTypeField);
 
         root.Add(bonusGroup);
        
@@ -113,9 +123,9 @@ public class UpgradeEditor : EditorWindow
                 bonusGroup.Add(increaseAmountField);
                 break;
             case UpgradeType.statChange:
+                bonusGroup.Add(statTypeField);
                 bonusGroup.Add(increaseTypeField);
                 bonusGroup.Add(increaseAmountField);
-                bonusGroup.Add(statTypeField);
                 break;
             case UpgradeType.newMeleeWeapon:
                 bonusGroup.Add(minAttackField);
@@ -133,6 +143,8 @@ public class UpgradeEditor : EditorWindow
               
                 bonusGroup.Add(minSpeedField);
                 bonusGroup.Add(maxSpeedField);
+
+                bonusGroup.Add(pierceToggle);
 
                 break;
             case UpgradeType.newShieldWeapon:
@@ -162,6 +174,7 @@ public class UpgradeEditor : EditorWindow
         Directory.CreateDirectory(ResourcesPath);
 
         var upgrade = ScriptableObject.CreateInstance<SO_UpgradeData>();
+        upgrade.soundClip = (AudioClip)soundField.value;
         upgrade.upgradeText= nameField.value;
         upgrade.upgradeType = (UpgradeType)upgradeTypeField.value;
         upgrade.statType = (StatType)statTypeField.value;
@@ -170,6 +183,7 @@ public class UpgradeEditor : EditorWindow
         upgrade.dependancy = (SO_UpgradeData)dependancyField.value;
         upgrade.upgradeLevel = (Rarity)rarityField.value;
         upgrade.minLevel = minLevelField.value;
+        upgrade.rangeWeaponPierce = pierceToggle.value;
         
         upgrade.minWeaponAttack = minAttackField.value;
         upgrade.maxWeaponAttack= maxAttackField.value;

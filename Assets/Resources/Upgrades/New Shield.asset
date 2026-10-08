@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: New Shield
   m_EditorClassIdentifier: Assembly-CSharp::SO_UpgradeData
   upgradeType: 4
+  soundClip: {fileID: 0}
   upgradeText: New Shield
   minLevel: 2
   dependancy: {fileID: 0}
@@ -22,8 +23,8 @@ MonoBehaviour:
   increaseAmount: 0
   minWeaponCooldown: 0
   maxWeaponCooldown: 0
-  minWeaponAttack: 4
-  maxWeaponAttack: 5
+  minWeaponAttack: 2
+  maxWeaponAttack: 4
   minWeaponSpeed: 6
   maxWeaponSpeed: 16
   minWeaponRadius: 4

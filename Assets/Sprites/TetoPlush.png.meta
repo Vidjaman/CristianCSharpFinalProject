@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: db1c9dd170cee7d4a94ca5112a60562e
+guid: 57dfe8cf9d70a1341845e699c6a9f9ea
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3129923787709736968
-    second: teto_0
+      213: -1314707145751478968
+    second: TetoPlush_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: teto_0
+      name: TetoPlush_0
       rect:
         serializedVersion: 2
         x: 43
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8f7148be5e64094d0800000000000000
-      internalID: -3129923787709736968
+      spriteID: 84db0d901d831cde0800000000000000
+      internalID: -1314707145751478968
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      teto_0: -3129923787709736968
+      TetoPlush_0: -1314707145751478968
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

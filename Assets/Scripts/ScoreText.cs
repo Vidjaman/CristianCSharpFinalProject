@@ -8,7 +8,7 @@ public class ScoreText : MonoBehaviour
     void Start()
     {
         text=GetComponent<TextMeshProUGUI>();
-        text.text = "High Score: " + GameManager.Instance.GetHighScore();
+        text.text = "High Score: " + GameManager.Instance.GetHighScore().ToString("G10");
     }
 
     // Update is called once per frame
