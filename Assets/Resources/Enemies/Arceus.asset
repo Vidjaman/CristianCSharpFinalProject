@@ -18,7 +18,7 @@ MonoBehaviour:
   enemyType: 0
   Speed: 50
   expYield: 0
-  startLevel: 50
+  startLevel: 40
   endLevel: 0
   shotSpeed: 0
   distanceToKeep: 0

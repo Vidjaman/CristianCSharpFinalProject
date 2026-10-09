@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a90473d8c89bc54baee53301a082756, type: 3}
   m_Name: Friend
   m_EditorClassIdentifier: Assembly-CSharp::SO_Enemy
-  MaxHP: 50
+  MaxHP: 100
   EnemyName: Friend
   Sprite: {fileID: -7010342202941483130, guid: cae7b7b5933381247a6e671167bc47e5, type: 3}
   enemyType: 0

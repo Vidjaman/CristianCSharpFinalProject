@@ -25,7 +25,7 @@ public class DeathWinAnimation : MonoBehaviour
     }
     public void SetFinalScoreText()
     {
-        finalScoreText.text = "Final Score: "+GameObject.FindWithTag("Player").GetComponent<PlayerStats>().GetScore();
+        finalScoreText.text = "Final Score: "+GameObject.FindWithTag("Player").GetComponent<PlayerStats>().GetScore().ToString("G10");
     }
     [SerializeField] AudioClip loseSong;
     public void PlayGameOverSong()

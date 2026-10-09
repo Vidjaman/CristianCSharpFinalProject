@@ -131,7 +131,8 @@ public class GameManager : MonoBehaviour
     }
     public void SetHighScore(float score)
     {
-        if(score> _HighScore) _HighScore = score;
+        if(score> _HighScore)
+            _HighScore = score;
 
         saveData.highScore = _HighScore;
         SaveScore();
@@ -205,6 +206,7 @@ public class GameManager : MonoBehaviour
         StopAllCoroutines();
         if (SceneManager.GetActiveScene().name != "MainGame" ) 
             return;
+        LoadScore();
         started = true;
         enemyList = Resources.LoadAll<SO_Enemy>("Enemies");
         spawnDelay = 1;
