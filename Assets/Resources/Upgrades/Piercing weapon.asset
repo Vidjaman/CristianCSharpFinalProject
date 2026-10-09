@@ -21,12 +21,12 @@ MonoBehaviour:
   statType: 0
   increaseType: 0
   increaseAmount: 0
-  minWeaponCooldown: 1
-  maxWeaponCooldown: 2
-  minWeaponAttack: 4
-  maxWeaponAttack: 6
-  minWeaponSpeed: 3
-  maxWeaponSpeed: 6
+  minWeaponCooldown: 0.8
+  maxWeaponCooldown: 1.5
+  minWeaponAttack: 7
+  maxWeaponAttack: 12
+  minWeaponSpeed: 7
+  maxWeaponSpeed: 11
   minWeaponRadius: 0
   maxWeaponRadius: 0
   rangeWeaponPierce: 1

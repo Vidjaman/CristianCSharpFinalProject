@@ -73,7 +73,7 @@ public class PlayerStats : MonoBehaviour
         }
     }
     [SerializeField] AudioClip levelUpSound;
-    int maxLevelToReduceCooldown = 40;
+    int maxLevelToReduceCooldown = 30;
     void LevelUp()
     {
         confetti.Play();

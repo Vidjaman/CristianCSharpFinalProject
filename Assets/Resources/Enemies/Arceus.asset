@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a90473d8c89bc54baee53301a082756, type: 3}
   m_Name: Arceus
   m_EditorClassIdentifier: Assembly-CSharp::SO_Enemy
-  MaxHP: 250
+  MaxHP: 150
   EnemyName: Arceus1
   Sprite: {fileID: 21300000, guid: 10984eb1118299241ad0967561440a42, type: 3}
   enemyType: 0
-  Speed: 50
+  Speed: 36
   expYield: 0
   startLevel: 40
   endLevel: 0

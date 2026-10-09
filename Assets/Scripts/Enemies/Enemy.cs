@@ -65,6 +65,10 @@ public class Enemy : MonoBehaviour
     {
         SetTargetPosition();
         rb.linearVelocity= DirectionTowardsTarget() * speed;
+        if (Vector3.Distance(transform.position, Player.transform.position) > 150)
+        {
+            Destroy(gameObject);
+        }
     }
     
     private void OnDestroy()

@@ -94,8 +94,12 @@ public class GameManager : MonoBehaviour
     SaveData saveData;
     public void LoadScore()
     {
-        var saveGame = JsonUtility.FromJson<SaveData>(File.ReadAllText(filePath));
-        _HighScore = saveGame.highScore;
+        if (File.Exists(filePath))
+        {
+            var saveGame = JsonUtility.FromJson<SaveData>(File.ReadAllText(filePath));
+            _HighScore = saveGame.highScore;
+        }
+        
         
     }
     public void SaveScore()
@@ -114,6 +118,7 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
+        if (Keyboard.current.digit1Key.wasPressedThisFrame) timer = 30;
         if (won||!started)
             return;
         timer -= Time.deltaTime;
@@ -201,6 +206,7 @@ public class GameManager : MonoBehaviour
         
     }
     bool started;
+
     public void StartGame() 
     {
         StopAllCoroutines();
